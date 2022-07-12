@@ -7,7 +7,6 @@ body {
 
 #outer-game-one {
     display: flex;
-    flex: 1;
     height: 700px;
 }
 
@@ -16,9 +15,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    flex: 1;
+    /* flex: 1; */
     height: inherit;
-    padding-right: 1rem;
 }
 
 .true-false-box {
@@ -42,19 +40,22 @@ body {
 
 #outer-question {
     display: flex;
-    width: 60%;
+    /* flex: 1; */
+    align-items: flex-end;
     flex-direction: column;
     height: inherit;
 }
 
 .question-box {
-    background-color: aqua;
-    border: 2px solid black;
+    border: 5px solid black;
+    border-top: none;
     height: 6.5rem;
+    width: 10rem;
 }
 
 #question-1 {
-    margin-top: 1.6rem;
+    margin-top: 1rem;
+    border-top: 5px solid black;
 }
 
 #question-1 img, #question-2 img, #question-3 img, #question-4 img, #question-5 img, #question-6 img {
@@ -66,17 +67,15 @@ body {
 #outer-game-two {
     display: flex;
     flex-wrap: wrap;
-    background-color: blue;
+    flex: 1;
     align-content: flex-start;
     height: 700px;
-    flex: 3;
 }
 
 header {
     width: 100%;
     background-color: green;
-    height: 100px;
-    padding-left: 13%;
+    height: 5rem;
 }
 
 #outer-timer-buttons {
@@ -88,19 +87,19 @@ header {
 #outer-answer {
     display: flex;
     flex-direction: column;
-    width: 20%;
-    background-color: orange;
     height: 600px;
 }
 
 .answer-box {
-    background-color: aqua;
-    border: 2px solid black;
+    border: 5px solid black;
+    border-top: none;
     height: 6.5rem;
+    width: 10rem;
 }
 
 #answer-1 {
-    margin-top: 2rem;
+    margin-top: 2.9rem;
+    border-top: 5px solid black;
 }
 
 #answer-1 img, #answer-2 img, #answer-3 img, #answer-4 img {
