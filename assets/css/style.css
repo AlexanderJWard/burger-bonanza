@@ -12,15 +12,39 @@ body {
 }
 
 #outer-true-false {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     flex: 1;
-    background-color: yellow;
     height: inherit;
+    padding-right: 1rem;
+}
+
+.true-false-box {
+    display: flex;
+    margin: 1.5rem 0;
+    width: 60px;
+    height: 60px;
+}
+
+.fa-circle-check {
+    margin: auto;
+    font-size: 60px;
+    color: green;
+}
+
+.fa-circle-xmark {
+    margin: auto;
+    font-size: 60px;
+    color: red;
 }
 
 #outer-question {
     display: flex;
+    flex: 2;
     flex-direction: column;
-    width: 60%;
+    align-items: center;
     background-color: purple;
     height: inherit;
 }
