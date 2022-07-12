@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+#outer-game-one {
+    display: flex;
+    flex: 1;
+    height: 800px;
+}
+
+#outer-true-false {
+    flex: 1;
+    background-color: yellow;
+    height: inherit;
+}
+
+#outer-question {
+    width: 60%;
+    background-color: purple;
+    height: inherit;
+}
+
+#outer-game-two {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+    align-content: flex-start;
+    height: 800px;
+    flex: 2;
+}
+
+header {
+    width: 100%;
+    background-color: green;
+    height: 100px;
+    padding-left: 13%;
+}
+
+#outer-timer-buttons {
+    flex: 1;
+    background-color: turquoise;
+    height: 700px;
+}
+
+#outer-answer {
+    width: 30%;
+    background-color: orange;
+    height: 700px;
+}
+
+#outer-score-submit-selection {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    height: 700px;
+
+}
+
+#outer-score-submit {
+    display: flex;
+    flex: 1;
+}
+
+#outer-score {
+    flex: 1;
+    background-color: red;
+}
+
+#outer-submit {
+    flex: 1;
+    background-color: saddlebrown;
+}
+
+#outer-selection-info {
+    flex: 3;
+    background-color: bisque;
+}
