@@ -86,6 +86,7 @@ header {
 
 #outer-answer {
     display: flex;
+    flex: 1;
     flex-direction: column;
     height: 600px;
 }
@@ -131,6 +132,47 @@ header {
 }
 
 #outer-selection-info {
+    display: grid;
     flex: 3;
     background-color: bisque;
+}
+
+#selection, #message-box {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#selection {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
+    margin-left: 5rem;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 22rem;
+    height: 15rem;
+
+}
+
+.selection-box {
+    border: 5px solid black;
+    height: 6.5rem;
+    width: 10rem;
+    margin: 0;
+    padding: 0;
+}
+
+.selection-box img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+#message-box {
+    display: flex;
+    border: 1px solid black;
+    width: 22rem;
+    height: 15rem;
 }
