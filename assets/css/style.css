@@ -14,8 +14,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    /* flex: 1; */
     height: inherit;
 }
 
@@ -46,15 +44,15 @@ body {
 }
 
 .question-box {
-    border: 5px solid black;
+    border: 5px solid white;
     border-top: none;
     height: 6.5rem;
     width: 10rem;
 }
 
 #question-1 {
-    margin-top: 1rem;
-    border-top: 5px solid black;
+    border-top: 5px solid white;
+    margin-top: 2rem;
 }
 
 #question-1 img, #question-2 img, #question-3 img, #question-4 img, #question-5 img, #question-6 img {
@@ -116,7 +114,7 @@ header {
     border-radius: 50%;
     height: 8rem;
     width: 8rem;
-    margin-bottom: 4.8rem;
+    margin-bottom: 2rem;
     cursor: pointer;
 }
 
@@ -128,15 +126,15 @@ header {
 }
 
 .answer-box {
-    border: 5px solid black;
+    border: 5px solid white;
     border-top: none;
     height: 6.5rem;
     width: 10rem;
 }
 
 #answer-1 {
-    margin-top: 2.9rem;
-    border-top: 5px solid black;
+    margin-top: 4rem;
+    border-top: 5px solid white;
 }
 
 #answer-1 img, #answer-2 img, #answer-3 img, #answer-4 img {
