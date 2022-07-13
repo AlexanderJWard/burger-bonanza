@@ -21,7 +21,7 @@ body {
 
 .true-false-box {
     display: flex;
-    margin: 1.5rem 0;
+    margin: 1.5rem 1rem 1.5rem 3rem;
     width: 60px;
     height: 60px;
 }
@@ -40,7 +40,6 @@ body {
 
 #outer-question {
     display: flex;
-    /* flex: 1; */
     align-items: flex-end;
     flex-direction: column;
     height: inherit;
@@ -74,14 +73,51 @@ body {
 
 header {
     width: 100%;
-    background-color: green;
     height: 5rem;
 }
 
 #outer-timer-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     flex: 1;
-    background-color: turquoise;
     height: 600px;
+    margin: 0 2rem;
+}
+
+#start-game {
+    border: 5px solid lightgray;
+    background-color: lightgray;
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+    cursor: pointer;
+}
+
+#timer {
+    display: flex;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+}
+
+#timer p {
+    margin: auto;
+    font-size: 60px;
+    color: darkgray;
+}
+
+#reset-game {
+    border: 5px solid lightgray;
+    background-color: lightgray;
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 4.8rem;
+    cursor: pointer;
 }
 
 #outer-answer {
