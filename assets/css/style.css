@@ -18,13 +18,13 @@ header {
     height: 700px;
 }
 
-#outer-true-false {
+#outer-checkbox {
     display: flex;
     flex-direction: column;
     padding-top: 6rem;
 }
 
-.true-false-box {
+.checkbox {
     display: flex;
     margin: 1.3rem 1rem 1.3rem 3rem;
     width: 60px;
