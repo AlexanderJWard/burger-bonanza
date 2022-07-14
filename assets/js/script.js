@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("button-type") === "start") {
                 runGame();
+            } else if (this.getAttribute("button-type") === "reset") {
+                hideQuestion();
             }
         })
     }
@@ -40,6 +42,9 @@ function generateQuestion() {
  * 
  * An if statement is run through each number of numbers which pushes a different image html
  * to the question variable. For example if number is 1 push burgerMeat.png to question variable.
+ * 
+ * Create 4 new variables for question1 to question 4 and change inner HTML of each question box
+ * replacing it with the related question variable from the if statement.
  */
 
 function displayQuestion() {
@@ -64,10 +69,25 @@ function displayQuestion() {
             `);
         }
     }
+    let question1 = document.getElementById("question-1");
+    let question2 = document.getElementById("question-2");
+    let question3 = document.getElementById("question-3");
+    let question4 = document.getElementById("question-4");
+    question1.innerHTML = `${question[0]}`;
+    question2.innerHTML = `${question[1]}`;
+    question3.innerHTML = `${question[2]}`;
+    question4.innerHTML = `${question[3]}`;
 }
 
-function hideQuestion() {
+/**
+ * hideQuestion sets all inner HTML of each question box to the image of a question mark.
+ */
 
+function hideQuestion() {
+    document.getElementById("question-1").innerHTML = '<img src="assets/images/question.png">';
+    document.getElementById("question-2").innerHTML = '<img src="assets/images/question.png">';
+    document.getElementById("question-3").innerHTML = '<img src="assets/images/question.png">';
+    document.getElementById("question-4").innerHTML = '<img src="assets/images/question.png">';
 }
 
 function displayAnswer() {

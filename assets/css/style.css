@@ -13,20 +13,20 @@ header {
 
 #game-box {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 700px;
 }
 
 #outer-checkbox {
     display: flex;
     flex-direction: column;
-    padding-top: 6rem;
+    padding-top: 6.3rem;
 }
 
 .checkbox {
     display: flex;
-    margin: 1.3rem 1rem 1.3rem 3rem;
+    margin: 1.4rem 1rem 1.4rem 3rem;
     width: 60px;
     height: 60px;
 }
@@ -76,7 +76,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     height: 600px;
-    margin: 0 2rem;
+    margin: 0 5rem;
 }
 
 .btn {
@@ -89,7 +89,7 @@ header {
 }
 
 #start-game {
-    color: gray;
+    color: darkgray;
     font-size: 30px;
 }
 
@@ -109,8 +109,7 @@ header {
 }
 
 #reset-game {
-    margin-bottom: 2rem;
-    color: gray;
+    color: darkgray;
     font-size: 30px;
 }
 
@@ -148,7 +147,6 @@ header {
 
 #outer-score-submit-selection {
     display: flex;
-    flex: 1;
     gap: 2rem;
     flex-direction: column;
 }
@@ -163,13 +161,13 @@ header {
     justify-content: center;
     gap: 1rem;
     margin-top: 2.5rem;
-    margin-left: 3.5rem;
+    margin-left: 3.8rem;
     width: 12rem;
 }
 
 .score-box {
     padding-left: 2rem;
-    border: 5px solid black;
+    border: 5px solid lightgray;
     border-radius: 8px;
 }
 
@@ -179,7 +177,7 @@ header {
 }
 
 #submit {
-    color: gray;
+    color: darkgray;
     font-size: 30px;
 }
 
@@ -198,10 +196,8 @@ header {
 }
 
 #selection {
-    visibility: hidden;
+    /* visibility: hidden; */
     display: flex;
-    justify-content: center;
-    align-content: center;
     gap: 0.5rem;
     flex-wrap: wrap;
     width: 26rem;
@@ -210,7 +206,7 @@ header {
 }
 
 .selection-box {
-    border: 5px solid black;
+    border: 5px solid lightgray;
     border-radius: 8px;
     height: 8rem;
     width: 12rem;
@@ -224,11 +220,12 @@ header {
 }
 
 #message-box {
+    /* visibility: hidden; */
     display: flex;
-    border: 5px solid black;
+    border: 5px solid lightgray;
     border-radius: 8px;
-    width: 26rem;
-    height: 18rem;
+    width: 25rem;
+    height: 17rem;
 }
 
 #message-box p {
