@@ -8,6 +8,7 @@ body {
 header {
     width: 100%;
     height: 4rem;
+    text-align: center;
 }
 
 #game-box {
@@ -25,7 +26,6 @@ header {
 
 .true-false-box {
     display: flex;
-    border: 1px solid purple;
     margin: 1.3rem 1rem 1.3rem 3rem;
     width: 60px;
     height: 60px;
@@ -45,25 +45,29 @@ header {
 
 #outer-question {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     height: inherit;
 }
 
 .question-box {
-    border: 5px solid white;
-    border-top: none;
     height: 6rem;
     width: 10rem;
 }
 
-#question-1 {
-    border-top: 5px solid white;
-}
-
-#question-1 img, #question-2 img, #question-3 img, #question-4 img, #question-5 img, #question-6 img {
+.question-box img {
     object-fit: contain;
     width: 100%;
+    height: 100%;
+}
+
+#question-1, #question-2, #question-3, #question-4 {
+    border: 5px solid white;
+    border-top: 5px solid lightgray;
+}
+
+#question-1 {
+    border-top: 5px solid white;
 }
 
 #outer-timer-buttons {
@@ -84,6 +88,11 @@ header {
     cursor: pointer;
 }
 
+#start-game {
+    color: gray;
+    font-size: 30px;
+}
+
 #timer {
     display: flex;
     border: 1px solid lightgray;
@@ -101,30 +110,40 @@ header {
 
 #reset-game {
     margin-bottom: 2rem;
+    color: gray;
+    font-size: 30px;
 }
 
 #outer-answer {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    height: 600px;
+    height: inherit;
 }
 
 .answer-box {
-    border: 5px solid white;
-    border-radius: 8px;
-    border-top: none;
     height: 6rem;
     width: 10rem;
 }
 
-#answer-1 {
-    margin-top: 6.5rem;
-    border-top: 5px solid white;
-}
-
-#answer-1 img, #answer-2 img, #answer-3 img, #answer-4 img {
+.answer-box img {
     object-fit: contain;
     width: 100%;
+    height: 100%;
+}
+
+#answer-1, #answer-2, #answer-3, #answer-4 {
+    border: 5px solid white;
+    border-top: 5px solid lightgray;
+}
+
+#answer-1 {
+    border: 5px solid green;
+    border-radius: 8px;
+}
+
+#answer-2 {
+    border: 5px solid white;
 }
 
 #outer-score-submit-selection {
@@ -159,6 +178,11 @@ header {
     margin-left: 7rem;
 }
 
+#submit {
+    color: gray;
+    font-size: 30px;
+}
+
 #outer-selection-info {
     display: flex;
     padding-left: 5rem;
@@ -174,6 +198,7 @@ header {
 }
 
 #selection {
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-content: center;
