@@ -111,6 +111,7 @@ header {
 
 .answer-box {
     border: 5px solid white;
+    border-radius: 8px;
     border-top: none;
     height: 6rem;
     width: 10rem;
@@ -138,9 +139,19 @@ header {
 }
 
 #outer-score {
-    background-color: red;
-    margin-left: 3rem;
-    width: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    margin-left: 3.5rem;
+    width: 12rem;
+}
+
+.score-box {
+    padding-left: 2rem;
+    border: 5px solid black;
+    border-radius: 8px;
 }
 
 #outer-submit {
@@ -168,7 +179,6 @@ header {
     align-content: center;
     gap: 0.5rem;
     flex-wrap: wrap;
-    border: 1px solid black;
     width: 26rem;
     height: 18rem;
 
@@ -176,6 +186,7 @@ header {
 
 .selection-box {
     border: 5px solid black;
+    border-radius: 8px;
     height: 8rem;
     width: 12rem;
     margin: 0;
@@ -189,7 +200,12 @@ header {
 
 #message-box {
     display: flex;
-    border: 1px solid black;
+    border: 5px solid black;
+    border-radius: 8px;
     width: 26rem;
     height: 18rem;
+}
+
+#message-box p {
+    margin: auto;
 }
