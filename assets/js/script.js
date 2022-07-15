@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("game-box").classList.toggle("hide");
     let buttons = document.getElementsByClassName("btn");
     for (button of buttons) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             if (this.getAttribute("button-type") === "start") {
                 runGame();
             } else if (this.getAttribute("button-type") === "reset") {
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
+    displayAnswer();
 })
 
 /**
@@ -91,7 +93,70 @@ function hideQuestion() {
 }
 
 function displayAnswer() {
-
+    let buttons = document.getElementsByClassName("selection-btn");
+    let numbers = [];
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("button-number") === "1") {
+                numbers.push(1);
+            } else if (this.getAttribute("button-number") === "2") {
+                numbers.push(2);
+            } else if (this.getAttribute("button-number") === "3") {
+                numbers.push(3);
+            } else if (this.getAttribute("button-number") === "4") {
+                numbers.push(4);
+            }
+            let answer = [];
+            for (number of numbers) {
+                if (number === 1) {
+                    answer.push(`
+            <img src="assets/images/burgerMeat.png">
+            `);
+                } else if (number === 2) {
+                    answer.push(`
+            <img src="assets/images/salad.png">
+            `);
+                } else if (number === 3) {
+                    answer.push(`
+            <img src="assets/images/baconEggs.png">
+            `);
+                } else if (number === 4) {
+                    answer.push(`
+            <img src="assets/images/cheese.png">
+            `);
+                }
+            }
+            let answer1 = document.getElementById("answer-1");
+            let answer2 = document.getElementById("answer-2");
+            let answer3 = document.getElementById("answer-3");
+            let answer4 = document.getElementById("answer-4");
+            if (numbers.length === 1) {
+                answer1.innerHTML = `${answer[0]}`;
+                answer1.style.border = "5px solid white";
+                answer2.style.border = "5px solid green";
+                answer3.style.borderTop = "5px solid white";
+            } else if (numbers.length === 2) {
+                answer2.innerHTML = `${answer[1]}`;
+                answer2.style.border = "5px solid white";
+                answer2.style.borderTop = "5px solid darkgray";
+                answer3.style.border = "5px solid green";
+                answer4.style.borderTop = "5px solid white";
+            } else if (numbers.length === 3) {
+                answer3.innerHTML = `${answer[2]}`;
+                answer3.style.border = "5px solid white";
+                answer3.style.borderTop = "5px solid darkgray";
+                answer4.style.border = "5px solid green";
+            } else if (numbers.length === 4) {
+                answer4.innerHTML = `${answer[3]}`;
+                answer4.style.border = "5px solid white";
+                answer4.style.borderTop = "5px solid darkgray";
+                answer1.style.border = "5px solid green";
+                answer4.style.borderTop = "5px solid darkgray";
+                answer2.style.borderTop = "5px solid white"
+                numbers = [];
+            }
+        })
+    }
 }
 
 function checkAnswer() {
@@ -115,11 +180,11 @@ function informationBoxStart() {
 }
 
 function informationBoxDuring() {
-    
+
 }
 
 function informationBoxEnd() {
-    
+
 }
 
 function startTimer() {

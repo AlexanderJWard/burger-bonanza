@@ -11,6 +11,10 @@ header {
     text-align: center;
 }
 
+.hide {
+    visibility: hidden;
+}
+
 #game-box {
     display: flex;
     justify-content: center;
@@ -214,13 +218,13 @@ header {
     padding: 0;
 }
 
-.selection-box img {
+.selection-box input {
     object-fit: contain;
     width: 100%;
 }
 
 #message-box {
-    /* visibility: hidden; */
+    visibility: hidden;
     display: flex;
     border: 5px solid lightgray;
     border-radius: 8px;
