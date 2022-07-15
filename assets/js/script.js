@@ -1,11 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // document.getElementById("game-box").classList.toggle("flex");
+    document.getElementById("difficulty").classList.toggle("flex");
     let buttons = document.getElementsByClassName("btn");
     for (button of buttons) {
         button.addEventListener("click", function () {
-            if (this.getAttribute("button-type") === "start-medium") {
+            if (this.getAttribute("button-type") === "easy") {
+                document.getElementById("seconds").innerHTML = 10;
+                document.getElementById("start-game").setAttribute("button-type", "start-easy");
+                displayGame();
+            } else if (this.getAttribute("button-type") === "medium") {
+                document.getElementById("seconds").innerHTML = 6;
+                document.getElementById("start-game").setAttribute("button-type", "start-medium");
+                displayGame();
+            } else if (this.getAttribute("button-type") === "hard") {
+                document.getElementById("seconds").innerHTML = 3;
+                document.getElementById("start-game").setAttribute("button-type", "start-hard");
+                displayGame();
+            } else if (this.getAttribute("button-type") === "start-easy") {
+                resetGame();
+                displayQuestion();
+                startTimerEasy();
+            } else if (this.getAttribute("button-type") === "start-medium") {
+                resetGame();
                 displayQuestion();
                 startTimerMedium();
+            } else if (this.getAttribute("button-type") === "start-hard") {
+                resetGame();
+                displayQuestion();
+                startTimerHard();
             } else if (this.getAttribute("button-type") === "reset") {
                 resetGame();
                 hideQuestion();
@@ -14,6 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     displayAnswer();
 })
+
+function displayGame() {
+    document.getElementById("difficulty").classList.toggle("flex");
+    document.getElementById("game-box").classList.toggle("flex");
+}
 
 /**
  * generateQuestion will use Math.random to generate a random number. This number will be multiplied by 4.
@@ -208,8 +234,50 @@ function messageBoxEnd() {
 
 let nowTime;
 
-function startTimerMedium() {
+/**
+ * startTimerEasy sets the time to 10 seconds, hides the start game button & shows the reset button.
+ * The message box is updated with a during timer game message. setTimeout is used to tick every 1 second and
+ * update the timer paragraph with the current time left.
+ * 
+ * Once at 0 the start button is made visible again and the reset button is hidden. The question is then hidden and
+ * the selection menu is made visible. The submit button is also made visible. All elemements mentioned that are
+ * made visibile are done using the class toggle for the hide class.
+ */
+
+ function startTimerEasy() {
     let time = 10;
+    document.getElementById("seconds").innerHTML = time;
+    document.getElementById("start-game").classList.toggle("hide");
+    document.getElementById("reset-game").classList.toggle("hide");
+    messageBoxDuring();
+    function timer() {
+        time--;
+        document.getElementById("seconds").innerHTML = time;
+        if (time > 0) {
+            nowTime = setTimeout(timer, 1000);
+        } else {
+            document.getElementById("start-game").classList.toggle("hide");
+            document.getElementById("reset-game").classList.toggle("hide");
+            toggleSelection();
+            document.getElementById("submit").classList.toggle("hide");
+            hideQuestion();
+        }
+    }
+    nowTime = setTimeout(timer, 1000);
+}
+
+/**
+ * startTimerMedium sets the time to 6 seconds, hides the start game button & shows the reset button.
+ * The message box is updated with a during timer game message. setTimeout is used to tick every 1 second and
+ * update the timer paragraph with the current time left.
+ * 
+ * Once at 0 the start button is made visible again and the reset button is hidden. The question is then hidden and
+ * the selection menu is made visible. The submit button is also made visible. All elemements mentioned that are
+ * made visibile are done using the class toggle for the hide class.
+ */
+
+function startTimerMedium() {
+    let time = 6;
     document.getElementById("seconds").innerHTML = time;
     document.getElementById("start-game").classList.toggle("hide");
     document.getElementById("reset-game").classList.toggle("hide");
@@ -245,6 +313,38 @@ function resetGame() {
     answer4.style.borderTop = "5px solid darkgray";
     document.getElementById("start-game").classList.toggle("hide");
     document.getElementById("reset-game").classList.toggle("hide");
+}
+
+/**
+ * startTimerHard sets the time to 3 seconds, hides the start game button & shows the reset button.
+ * The message box is updated with a during timer game message. setTimeout is used to tick every 1 second and
+ * update the timer paragraph with the current time left.
+ * 
+ * Once at 0 the start button is made visible again and the reset button is hidden. The question is then hidden and
+ * the selection menu is made visible. The submit button is also made visible. All elemements mentioned that are
+ * made visibile are done using the class toggle for the hide class.
+ */
+
+ function startTimerHard() {
+    let time = 3;
+    document.getElementById("seconds").innerHTML = time;
+    document.getElementById("start-game").classList.toggle("hide");
+    document.getElementById("reset-game").classList.toggle("hide");
+    messageBoxDuring();
+    function timer() {
+        time--;
+        document.getElementById("seconds").innerHTML = time;
+        if (time > 0) {
+            nowTime = setTimeout(timer, 1000);
+        } else {
+            document.getElementById("start-game").classList.toggle("hide");
+            document.getElementById("reset-game").classList.toggle("hide");
+            toggleSelection();
+            document.getElementById("submit").classList.toggle("hide");
+            hideQuestion();
+        }
+    }
+    nowTime = setTimeout(timer, 1000);
 }
 
 function incrementCorrect() {
