@@ -11,11 +11,13 @@ header {
     text-align: center;
 }
 
+.flex {
+    display: flex;
+}
+
 .hide {
     visibility: hidden;
 }
-
-
 
 #game-box {
     display: flex;
@@ -25,7 +27,6 @@ header {
 }
 
 #outer-checkbox {
-    display: flex;
     flex-direction: column;
     padding-top: 6.3rem;
 }
@@ -204,7 +205,6 @@ header {
 }
 
 #selection {
-    /* visibility: hidden; */
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
@@ -228,7 +228,6 @@ header {
 }
 
 #message-box {
-    visibility: hidden;
     display: flex;
     border: 5px solid lightgray;
     border-radius: 8px;
@@ -238,4 +237,8 @@ header {
 
 #message-box p {
     margin: auto;
+}
+
+.display-hide {
+    display: none;
 }

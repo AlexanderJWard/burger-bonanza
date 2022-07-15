@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 runGame();
             } else if (this.getAttribute("button-type") === "reset") {
                 // hideQuestion();
-                hideCheckbox();
+                toggleCheckbox();
             }
         })
     }
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function runGame() {
     displayQuestion();
+    startTimerMedium();
 }
 
 /**
@@ -164,8 +165,13 @@ function checkAnswer() {
 
 }
 
-function hideCheckbox() {
-    document.getElementById("outer-checkbox").classList.toggle("hide");
+/**
+ * toggleCheckbox will toggle the display-hide class which sets display to none.
+ */
+
+function toggleCheckbox() {
+    document.getElementById("outer-checkbox").classList.toggle("display-hide");
+    document.getElementById("outer-checkbox").classList.toggle("flex");
 }
 
 /* Hide correct check mark showing incorrect cross mark */
@@ -176,21 +182,13 @@ function hideCheckbox() {
     // document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
 
 /**
- * displaySelection hides the message box and makes the selection box visible.
+ * toggleSelection toggles the class hide for both selection box and message box.
+ * The class hide sets visibility to hidden.
  */
 
-function displaySelection() {
+function toggleSelection() {
     document.getElementById("message-box").classList.toggle("hide");
     document.getElementById("selection").classList.toggle("hide");
-}
-
-/**
- * hideSelection hides the selection box and makes the message box visible.
- */
-
-function hideSelection() {
-    document.getElementById("selection").classList.toggle("hide");
-    document.getElementById("message-box").classList.toggle("hide");
 }
 
 /**
@@ -217,8 +215,27 @@ function messageBoxEnd() {
     document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit";
 }
 
-function startTimer() {
 
+
+function startTimerMedium() {
+    let time = 10;
+    document.getElementById("seconds").innerHTML = time;
+    document.getElementById("start-game").classList.toggle("hide");
+    messageBoxDuring();
+    function timer() {
+        time--;
+        document.getElementById("seconds").innerHTML = time;
+        if (time > 0) {
+            setTimeout(timer, 1000);
+        } else {
+            document.getElementById("start-game").classList.toggle("hide");
+            toggleSelection();
+            document.getElementById("submit").classList.toggle("hide");
+            hideQuestion();
+        }
+
+    }
+    setTimeout(timer, 1000);
 }
 
 function resetGame() {
