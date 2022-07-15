@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.getAttribute("button-type") === "start") {
                 runGame();
             } else if (this.getAttribute("button-type") === "reset") {
-                hideQuestion();
+                // hideQuestion();
+                hideCheckbox();
             }
         })
     }
@@ -164,16 +165,23 @@ function checkAnswer() {
 }
 
 function hideCheckbox() {
-
+    document.getElementById("outer-checkbox").classList.toggle("hide");
 }
+
+/* Hide correct check mark showing incorrect cross mark */
+
+    // document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+    // document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+    // document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+    // document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
 
 /**
  * displaySelection hides the message box and makes the selection box visible.
  */
 
 function displaySelection() {
-    document.getElementById("message-box").style.visibility = "hidden";
-    document.getElementById("selection").style.visibility = "visible";
+    document.getElementById("message-box").classList.toggle("hide");
+    document.getElementById("selection").classList.toggle("hide");
 }
 
 /**
@@ -181,8 +189,8 @@ function displaySelection() {
  */
 
 function hideSelection() {
-    document.getElementById("selection").style.visibility = "hidden";
-    document.getElementById("message-box").style.visibility = "visible";
+    document.getElementById("selection").classList.toggle("hide");
+    document.getElementById("message-box").classList.toggle("hide");
 }
 
 /**
