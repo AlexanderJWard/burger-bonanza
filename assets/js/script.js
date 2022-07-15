@@ -167,24 +167,46 @@ function hideCheckbox() {
 
 }
 
-function displaySelection() {
+/**
+ * displaySelection hides the message box and makes the selection box visible.
+ */
 
+function displaySelection() {
+    document.getElementById("message-box").style.visibility = "hidden";
+    document.getElementById("selection").style.visibility = "visible";
 }
+
+/**
+ * hideSelection hides the selection box and makes the message box visible.
+ */
 
 function hideSelection() {
-
+    document.getElementById("selection").style.visibility = "hidden";
+    document.getElementById("message-box").style.visibility = "visible";
 }
 
-function informationBoxStart() {
+/**
+ * messageBoxStart changes the innerHTML text with relevant text for before the game has started.
+ */
 
+function messageBoxStart() {
+    document.getElementById("message-box-text").innerHTML = "Placeholder Message: Before Start";
 }
 
-function informationBoxDuring() {
+/**
+ * messageBoxDuring changes the innerHTML text with relevant text during the timer is active.
+ */
 
+function messageBoxDuring() {
+    document.getElementById("message-box-text").innerHTML = "Placeholder Message: During";
 }
 
-function informationBoxEnd() {
+/**
+ * messageBoxEnd changes the innerHTML text with relevant text for after the submit button is pressed.
+ */
 
+function messageBoxEnd() {
+    document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit";
 }
 
 function startTimer() {

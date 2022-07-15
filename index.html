@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
 
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
     <title>Burger Bonanza</title>
 </head>
+
 <body>
     <header>
         <h1>Burger Bonanza</h1>
@@ -34,7 +36,9 @@
             <div id="outer-start-game">
                 <button class="btn" id="start-game" button-type="start">START GAME</button>
             </div>
-            <div id="timer"><p id="seconds">0</p></div>
+            <div id="timer">
+                <p id="seconds">0</p>
+            </div>
             <div id="outer-reset-game">
                 <button class="btn" id="reset-game" button-type="reset">RESET GAME</button>
             </div>
@@ -53,26 +57,35 @@
                     <button class="btn" id="submit">SUBMIT</button>
                 </div>
                 <div id="outer-score">
-                    <div class="score-box" id="correct"><p>Correct: <span>0</span></p></div>
-                    <div class="score-box" id="incorrect"><p>Incorrect: <span>0</span></p></div>
+                    <div class="score-box" id="correct">
+                        <p>Correct: <span>0</span></p>
+                    </div>
+                    <div class="score-box" id="incorrect">
+                        <p>Incorrect: <span>0</span></p>
+                    </div>
                 </div>
             </div>
             <div id="outer-selection-info">
                 <div id="grid">
-                <div id="selection">
-                    <div class="selection-box" id="selection-1"><input class="selection-btn" type="image" src="assets/images/burgerMeat.png" button-number="1"></div>
-                    <div class="selection-box" id="selection-2"><input class="selection-btn" type="image" src="assets/images/salad.png" button-number="2"></div>
-                    <div class="selection-box" id="selection-3"><input class="selection-btn" type="image" src="assets/images/baconEggs.png" button-number="3"></div>
-                    <div class="selection-box" id="selection-4"><input class="selection-btn" type="image" src="assets/images/cheese.png" button-number="4"></div>
+                    <div id="selection">
+                        <div class="selection-box" id="selection-1"><input class="selection-btn" type="image"
+                                src="assets/images/burgerMeat.png" button-number="1"></div>
+                        <div class="selection-box" id="selection-2"><input class="selection-btn" type="image"
+                                src="assets/images/salad.png" button-number="2"></div>
+                        <div class="selection-box" id="selection-3"><input class="selection-btn" type="image"
+                                src="assets/images/baconEggs.png" button-number="3"></div>
+                        <div class="selection-box" id="selection-4"><input class="selection-btn" type="image"
+                                src="assets/images/cheese.png" button-number="4"></div>
+                    </div>
+                    <div id="message-box">
+                        <p id="message-box-text">Placeholder Message: Before Start</p>
+                    </div>
                 </div>
-                <div id="message-box">
-                    <p>Placeholder Message: Before Start</p>
-                </div>
-            </div>
             </div>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/12183a849e.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
