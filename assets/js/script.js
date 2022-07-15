@@ -1,28 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("game-box").classList.toggle("hide");
+    // document.getElementById("game-box").classList.toggle("flex");
     let buttons = document.getElementsByClassName("btn");
     for (button of buttons) {
         button.addEventListener("click", function () {
-            if (this.getAttribute("button-type") === "start") {
-                runGame();
+            if (this.getAttribute("button-type") === "start-medium") {
+                displayQuestion();
+                startTimerMedium();
             } else if (this.getAttribute("button-type") === "reset") {
-                // hideQuestion();
-                toggleCheckbox();
+                resetGame();
+                hideQuestion();
             }
         })
     }
     displayAnswer();
 })
-
-/**
- * RunGame will run all the required functions to start a fresh game instance. 
- * This function should be linked to the start button.
- */
-
-function runGame() {
-    displayQuestion();
-    startTimerMedium();
-}
 
 /**
  * generateQuestion will use Math.random to generate a random number. This number will be multiplied by 4.
@@ -215,31 +206,45 @@ function messageBoxEnd() {
     document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit";
 }
 
-
+let nowTime;
 
 function startTimerMedium() {
     let time = 10;
     document.getElementById("seconds").innerHTML = time;
     document.getElementById("start-game").classList.toggle("hide");
+    document.getElementById("reset-game").classList.toggle("hide");
     messageBoxDuring();
     function timer() {
         time--;
         document.getElementById("seconds").innerHTML = time;
         if (time > 0) {
-            setTimeout(timer, 1000);
+            nowTime = setTimeout(timer, 1000);
         } else {
             document.getElementById("start-game").classList.toggle("hide");
+            document.getElementById("reset-game").classList.toggle("hide");
             toggleSelection();
             document.getElementById("submit").classList.toggle("hide");
             hideQuestion();
         }
-
     }
-    setTimeout(timer, 1000);
+    nowTime = setTimeout(timer, 1000);
 }
 
 function resetGame() {
-
+    let answer1 = document.getElementById("answer-1");
+    let answer2 = document.getElementById("answer-2");
+    let answer3 = document.getElementById("answer-3");
+    let answer4 = document.getElementById("answer-4");
+    clearTimeout(nowTime);
+    document.getElementById("seconds").innerHTML = 10;
+    answer1.style.border = "5px solid green";
+    answer2.style.border = "5px solid white";
+    answer3.style.border = "5px solid white";
+    answer3.style.borderTop = "5px solid darkgray";
+    answer4.style.border = "5px solid white";
+    answer4.style.borderTop = "5px solid darkgray";
+    document.getElementById("start-game").classList.toggle("hide");
+    document.getElementById("reset-game").classList.toggle("hide");
 }
 
 function incrementCorrect() {

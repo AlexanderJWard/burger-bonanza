@@ -11,16 +11,26 @@ header {
     text-align: center;
 }
 
-.flex {
-    display: flex;
-}
-
 .hide {
     visibility: hidden;
 }
 
-#game-box {
+.display-hide {
+    display: none;
+}
+
+.flex {
     display: flex;
+}
+
+#difficulty {
+    display: flex;
+    flex: 1;
+    padding: 15rem 0;
+    justify-content: center;
+}
+
+#game-box {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
@@ -237,8 +247,4 @@ header {
 
 #message-box p {
     margin: auto;
-}
-
-.display-hide {
-    display: none;
 }

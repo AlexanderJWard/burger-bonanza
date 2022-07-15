@@ -17,7 +17,12 @@
         <h1>Burger Bonanza</h1>
     </header>
     <noscript>JavaScript is required to use this page.</noscript>
-    <div class="hide" id="game-box">
+    <div id="difficulty">
+        <button id="easy">EASY</button>
+        <button id="medium">MEDIUM</button>
+        <button id="hard">HARD</button>
+    </div>
+    <div class="display-hide" id="game-box">
         <div class="display-hide" id="outer-checkbox">
             <div class="checkbox" id="checkbox-1"><i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></div>
             <div class="checkbox" id="checkbox-2"><i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></div>
@@ -40,7 +45,7 @@
                 <p id="seconds">0</p>
             </div>
             <div id="outer-reset-game">
-                <button class="btn" id="reset-game" button-type="reset">RESET GAME</button>
+                <button class="btn hide" id="reset-game" button-type="reset">RESET GAME</button>
             </div>
         </div>
         <div id="outer-answer">
