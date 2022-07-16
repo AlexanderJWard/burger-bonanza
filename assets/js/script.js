@@ -187,7 +187,7 @@ function displayAnswer() {
 }
 
 function checkAnswer() {
-
+    let question1 = document.getElementById("question-1")
 }
 
 /**
