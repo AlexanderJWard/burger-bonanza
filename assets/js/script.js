@@ -95,9 +95,13 @@ function displayQuestion() {
     let question3 = document.getElementById("question-3");
     let question4 = document.getElementById("question-4");
     question1.innerHTML = `${question[0]}`;
+    question1.setAttribute("question", `${numbers[0]}`);
     question2.innerHTML = `${question[1]}`;
+    question2.setAttribute("question", `${numbers[1]}`);
     question3.innerHTML = `${question[2]}`;
+    question3.setAttribute("question", `${numbers[2]}`);
     question4.innerHTML = `${question[3]}`;
+    question4.setAttribute("question", `${numbers[3]}`);
 }
 
 /**
@@ -158,22 +162,27 @@ function displayAnswer() {
             let answer3 = document.getElementById("answer-3");
             let answer4 = document.getElementById("answer-4");
             if (numbers.length === 1) {
+                answer1.setAttribute("answer", `${numbers[0]}`);
                 answer1.innerHTML = `${answer[0]}`;
                 answer1.style.border = "5px solid white";
                 answer2.style.border = "5px solid green";
                 answer3.style.borderTop = "5px solid white";
+                console.log(answer1.getAttribute("answer"))
             } else if (numbers.length === 2) {
+                answer2.setAttribute("answer", `${numbers[1]}`);
                 answer2.innerHTML = `${answer[1]}`;
                 answer2.style.border = "5px solid white";
                 answer2.style.borderTop = "5px solid darkgray";
                 answer3.style.border = "5px solid green";
                 answer4.style.borderTop = "5px solid white";
             } else if (numbers.length === 3) {
+                answer3.setAttribute("answer", `${numbers[2]}`);
                 answer3.innerHTML = `${answer[2]}`;
                 answer3.style.border = "5px solid white";
                 answer3.style.borderTop = "5px solid darkgray";
                 answer4.style.border = "5px solid green";
             } else if (numbers.length === 4) {
+                answer4.setAttribute("answer", `${numbers[3]}`);
                 answer4.innerHTML = `${answer[3]}`;
                 answer4.style.border = "5px solid white";
                 answer4.style.borderTop = "5px solid darkgray";
@@ -187,7 +196,14 @@ function displayAnswer() {
 }
 
 function checkAnswer() {
-    let question1 = document.getElementById("question-1")
+    let question1 = document.getElementById("question-1").getAttribute("question");
+    let question2 = document.getElementById("question-2").getAttribute("question");
+    let question3 = document.getElementById("question-3").getAttribute("question");
+    let question4 = document.getElementById("question-4").getAttribute("question");
+    let answer1 = document.getElementById("answer-1").getAttribute("answer");
+    let answer2 = document.getElementById("answer-2").getAttribute("answer");
+    let answer3 = document.getElementById("answer-3").getAttribute("answer");
+    let answer4 = document.getElementById("answer-4").getAttribute("answer");
 }
 
 /**
