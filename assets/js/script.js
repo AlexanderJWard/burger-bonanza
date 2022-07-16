@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 hideQuestion();
             } else if (this.getAttribute("button-type") === "submit") {
                 checkAnswer();
+                toggleSelection();
+                document.getElementById("submit").classList.toggle("hide");
             }
         })
     }
@@ -197,6 +199,15 @@ function displayAnswer() {
     }
 }
 
+/**
+ * checkAnswer will create variables for each answer box answer attribute and also create
+ * variables for question box question attributes.
+ * 
+ * The function will put them into two arrays and compare the contents using toString().
+ * If correct the message box innerHTML will change and correct score will go up. If the compare
+ * shows false the message box innerHTML will change and incorrect score will go up.
+ */
+
 function checkAnswer() {
     let question1 = document.getElementById("question-1").getAttribute("question");
     let question2 = document.getElementById("question-2").getAttribute("question");
@@ -210,10 +221,34 @@ function checkAnswer() {
     let answer = [answer1, answer2, answer3, answer4];
     let compare = question.toString() === answer.toString();
     if (question.toString() === answer.toString()) {
-        document.getElementById("submit").style.backgroundColor = "green";
+        document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit - CORRECT";
     } else {
-        document.getElementById("submit").style.backgroundColor = "red";
+        document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit - WRONG";
     };
+    let numbers = [];
+    for (let number of question) {
+        if (number === "1") {
+            numbers.push(`
+    <img src="assets/images/burgerMeat.png">
+    `);
+        } else if (number === "2") {
+            numbers.push(`
+    <img src="assets/images/salad.png">
+    `);
+        } else if (number === "3") {
+            numbers.push(`
+    <img src="assets/images/baconEggs.png">
+    `);
+        } else if (number === "4") {
+            numbers.push(`
+    <img src="assets/images/cheese.png">
+    `);
+        }
+    }
+    document.getElementById("question-1").innerHTML = `${numbers[0]}`;
+    document.getElementById("question-2").innerHTML = `${numbers[1]}`;
+    document.getElementById("question-3").innerHTML = `${numbers[2]}`;
+    document.getElementById("question-4").innerHTML = `${numbers[3]}`;
 }
 
 /**
@@ -256,14 +291,6 @@ function messageBoxStart() {
 
 function messageBoxDuring() {
     document.getElementById("message-box-text").innerHTML = "Placeholder Message: During";
-}
-
-/**
- * messageBoxEnd changes the innerHTML text with relevant text for after the submit button is pressed.
- */
-
-function messageBoxEnd() {
-    document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit";
 }
 
 let nowTime;
