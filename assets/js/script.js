@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 checkAnswer();
                 toggleSelection();
                 document.getElementById("submit").classList.toggle("hide");
+                document.getElementById("reset-game").classList.toggle("hide");
+                document.getElementById("start-game").classList.toggle("hide");
             }
         })
     }
@@ -206,6 +208,9 @@ function displayAnswer() {
  * The function will put them into two arrays and compare the contents using toString().
  * If correct the message box innerHTML will change and correct score will go up. If the compare
  * shows false the message box innerHTML will change and incorrect score will go up.
+ * 
+ * The question box images are then replaced with images of the question before it was hidden with question
+ * marks so the player can visually see the difference between their answer and the question.
  */
 
 function checkAnswer() {
@@ -249,6 +254,16 @@ function checkAnswer() {
     document.getElementById("question-2").innerHTML = `${numbers[1]}`;
     document.getElementById("question-3").innerHTML = `${numbers[2]}`;
     document.getElementById("question-4").innerHTML = `${numbers[3]}`;
+    toggleCheckbox();
+    if (question1 !== answer1) {
+        document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+    } else if (question2 !== answer2) {
+        document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+    } else if (question3 !== answer3) {
+        document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+    } else if (question4 !== answer4) {
+        document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+    }
 }
 
 /**
@@ -259,13 +274,6 @@ function toggleCheckbox() {
     document.getElementById("outer-checkbox").classList.toggle("display-hide");
     document.getElementById("outer-checkbox").classList.toggle("flex");
 }
-
-/* Hide correct check mark showing incorrect cross mark */
-
-    // document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
-    // document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
-    // document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
-    // document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
 
 /**
  * toggleSelection toggles the class hide for both selection box and message box.
@@ -359,7 +367,44 @@ function startTimerMedium() {
     nowTime = setTimeout(timer, 1000);
 }
 
-function resetGame() {
+/**
+ * startTimerHard sets the time to 3 seconds, hides the start game button & shows the reset button.
+ * The message box is updated with a during timer game message. setTimeout is used to tick every 1 second and
+ * update the timer paragraph with the current time left.
+ * 
+ * Once at 0 the start button is made visible again and the reset button is hidden. The question is then hidden and
+ * the selection menu is made visible. The submit button is also made visible. All elemements mentioned that are
+ * made visibile are done using the class toggle for the hide class.
+ */
+
+ function startTimerHard() {
+    let time = 3;
+    document.getElementById("seconds").innerHTML = time;
+    document.getElementById("reset-game").classList.toggle("hide");
+    document.getElementById("start-game").classList.toggle("hide");
+    messageBoxDuring();
+    function timer() {
+        time--;
+        document.getElementById("seconds").innerHTML = time;
+        if (time > 0) {
+            nowTime = setTimeout(timer, 1000);
+        } else {
+            
+            toggleSelection();
+            document.getElementById("submit").classList.toggle("hide");
+            hideQuestion();
+        }
+    }
+    nowTime = setTimeout(timer, 1000);
+}
+
+/**
+ * resetGame will set everything back to how it was at the very start. It clears the timer if running, 
+ * resets the timer seconds innerHTML, sets all answer border colors back to starting, removes any previous
+ * answer images in the answer boxes and toggles the start, reset, message box and selection elements.
+ */
+
+ function resetGame() {
     let answer1 = document.getElementById("answer-1");
     let answer2 = document.getElementById("answer-2");
     let answer3 = document.getElementById("answer-3");
@@ -383,43 +428,12 @@ function resetGame() {
     answer4.innerHTML = "";
     answer4.style.border = "5px solid white";
     answer4.style.borderTop = "5px solid darkgray";
-    document.getElementById("start-game").classList.toggle("hide");
-    document.getElementById("reset-game").classList.toggle("hide");
+    document.getElementById("start-game").classList.remove("hide");
+    document.getElementById("reset-game").classList.add("hide");
+    document.getElementById("submit").classList.add("hide");
     messageBoxStart();
     document.getElementById("message-box").classList.remove("hide");
     document.getElementById("selection").classList.add("hide");
-}
-
-/**
- * startTimerHard sets the time to 3 seconds, hides the start game button & shows the reset button.
- * The message box is updated with a during timer game message. setTimeout is used to tick every 1 second and
- * update the timer paragraph with the current time left.
- * 
- * Once at 0 the start button is made visible again and the reset button is hidden. The question is then hidden and
- * the selection menu is made visible. The submit button is also made visible. All elemements mentioned that are
- * made visibile are done using the class toggle for the hide class.
- */
-
- function startTimerHard() {
-    let time = 3;
-    document.getElementById("seconds").innerHTML = time;
-    document.getElementById("start-game").classList.toggle("hide");
-    document.getElementById("reset-game").classList.toggle("hide");
-    messageBoxDuring();
-    function timer() {
-        time--;
-        document.getElementById("seconds").innerHTML = time;
-        if (time > 0) {
-            nowTime = setTimeout(timer, 1000);
-        } else {
-            document.getElementById("start-game").classList.toggle("hide");
-            document.getElementById("reset-game").classList.toggle("hide");
-            toggleSelection();
-            document.getElementById("submit").classList.toggle("hide");
-            hideQuestion();
-        }
-    }
-    nowTime = setTimeout(timer, 1000);
 }
 
 function incrementCorrect() {
