@@ -98,7 +98,7 @@ header {
     margin: 0 5rem;
 }
 
-.btn {
+.btn-gray {
     border: 5px solid lightgray;
     background-color: lightgray;
     border-radius: 50%;

@@ -3,27 +3,27 @@ document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByClassName("btn");
     for (button of buttons) {
         button.addEventListener("click", function () {
-            if (this.getAttribute("button-type") === "easy") {
+            if (this.getAttribute("game-difficulty") === "easy") {
                 document.getElementById("seconds").innerHTML = 10;
-                document.getElementById("start-game").setAttribute("button-type", "start-easy");
+                document.getElementById("start-game").setAttribute("game-difficulty", "start-easy");
                 displayGame();
-            } else if (this.getAttribute("button-type") === "medium") {
+            } else if (this.getAttribute("game-difficulty") === "medium") {
                 document.getElementById("seconds").innerHTML = 6;
-                document.getElementById("start-game").setAttribute("button-type", "start-medium");
+                document.getElementById("start-game").setAttribute("game-difficulty", "start-medium");
                 displayGame();
-            } else if (this.getAttribute("button-type") === "hard") {
+            } else if (this.getAttribute("game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
-                document.getElementById("start-game").setAttribute("button-type", "start-hard");
+                document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
                 displayGame();
-            } else if (this.getAttribute("button-type") === "start-easy") {
+            } else if (this.getAttribute("game-difficulty") === "start-easy") {
                 resetGame();
                 displayQuestion();
                 startTimerEasy();
-            } else if (this.getAttribute("button-type") === "start-medium") {
+            } else if (this.getAttribute("game-difficulty") === "start-medium") {
                 resetGame();
                 displayQuestion();
                 startTimerMedium();
-            } else if (this.getAttribute("button-type") === "start-hard") {
+            } else if (this.getAttribute("game-difficulty") === "start-hard") {
                 resetGame();
                 displayQuestion();
                 startTimerHard();
@@ -112,7 +112,7 @@ function hideQuestion() {
 }
 
 function displayAnswer() {
-    let buttons = document.getElementsByClassName("selection-btn");
+    let buttons = document.getElementsByClassName("btn");
     let numbers = [];
     for (let button of buttons) {
         button.addEventListener("click", function () {
@@ -124,6 +124,14 @@ function displayAnswer() {
                 numbers.push(3);
             } else if (this.getAttribute("button-number") === "4") {
                 numbers.push(4);
+            } else if (this.getAttribute("game-difficulty") === "start-easy") {
+                numbers = [];
+            } else if (this.getAttribute("game-difficulty") === "start-medium") {
+                numbers = [];
+            } else if (this.getAttribute("game-difficulty") === "start-hard") {
+                numbers = [];
+            } else if (this.getAttribute("button-type") === "reset") {
+                numbers = [];
             }
             let answer = [];
             for (number of numbers) {
@@ -304,15 +312,29 @@ function resetGame() {
     let answer3 = document.getElementById("answer-3");
     let answer4 = document.getElementById("answer-4");
     clearTimeout(nowTime);
-    document.getElementById("seconds").innerHTML = 10;
+    let type = document.getElementById("start-game").getAttribute("game-difficulty");
+    if (type === "start-easy") {
+        document.getElementById("seconds").innerHTML = 10;
+    } else if (type === "start-medium") {
+        document.getElementById("seconds").innerHTML = 6;
+    } else if (type === "start-hard") {
+        document.getElementById("seconds").innerHTML = 3;
+    } 
+    answer1.innerHTML = "";
     answer1.style.border = "5px solid green";
+    answer2.innerHTML = "";
     answer2.style.border = "5px solid white";
+    answer3.innerHTML = "";
     answer3.style.border = "5px solid white";
     answer3.style.borderTop = "5px solid darkgray";
+    answer4.innerHTML = "";
     answer4.style.border = "5px solid white";
     answer4.style.borderTop = "5px solid darkgray";
     document.getElementById("start-game").classList.toggle("hide");
     document.getElementById("reset-game").classList.toggle("hide");
+    messageBoxStart();
+    document.getElementById("message-box").classList.remove("hide");
+    document.getElementById("selection").classList.add("hide");
 }
 
 /**
