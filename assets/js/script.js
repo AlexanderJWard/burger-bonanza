@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("difficulty").classList.toggle("flex");
     let buttons = document.getElementsByClassName("btn");
-    for (button of buttons) {
+    for (let button of buttons) {
         button.addEventListener("click", function () {
             if (this.getAttribute("game-difficulty") === "easy") {
                 document.getElementById("seconds").innerHTML = 10;
@@ -77,7 +77,7 @@ function generateQuestion() {
 function displayQuestion() {
     let numbers = generateQuestion();
     let question = [];
-    for (number of numbers) {
+    for (let number of numbers) {
         if (number === 1) {
             question.push(`
             <img src="assets/images/burgerMeat.png">
@@ -144,7 +144,7 @@ function displayAnswer() {
                 numbers = [];
             }
             let answer = [];
-            for (number of numbers) {
+            for (let number of numbers) {
                 if (number === 1) {
                     answer.push(`
             <img src="assets/images/burgerMeat.png">
@@ -173,7 +173,6 @@ function displayAnswer() {
                 answer1.style.border = "5px solid white";
                 answer2.style.border = "5px solid green";
                 answer3.style.borderTop = "5px solid white";
-                console.log(answer1.getAttribute("answer"))
             } else if (numbers.length === 2) {
                 answer2.setAttribute("answer", `${numbers[1]}`);
                 answer2.innerHTML = `${answer[1]}`;
@@ -330,8 +329,6 @@ let nowTime;
         if (time > 0) {
             nowTime = setTimeout(timer, 1000);
         } else {
-            document.getElementById("start-game").classList.toggle("hide");
-            document.getElementById("reset-game").classList.toggle("hide");
             toggleSelection();
             document.getElementById("submit").classList.toggle("hide");
             hideQuestion();
@@ -362,8 +359,6 @@ function startTimerMedium() {
         if (time > 0) {
             nowTime = setTimeout(timer, 1000);
         } else {
-            document.getElementById("start-game").classList.toggle("hide");
-            document.getElementById("reset-game").classList.toggle("hide");
             toggleSelection();
             document.getElementById("submit").classList.toggle("hide");
             hideQuestion();
@@ -394,7 +389,6 @@ function startTimerMedium() {
         if (time > 0) {
             nowTime = setTimeout(timer, 1000);
         } else {
-            
             toggleSelection();
             document.getElementById("submit").classList.toggle("hide");
             hideQuestion();
