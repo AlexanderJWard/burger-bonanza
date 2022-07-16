@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.getAttribute("button-type") === "reset") {
                 resetGame();
                 hideQuestion();
+            } else if (this.getAttribute("button-type") === "submit") {
+                checkAnswer();
             }
         })
     }
@@ -204,6 +206,14 @@ function checkAnswer() {
     let answer2 = document.getElementById("answer-2").getAttribute("answer");
     let answer3 = document.getElementById("answer-3").getAttribute("answer");
     let answer4 = document.getElementById("answer-4").getAttribute("answer");
+    let question = [question1, question2, question3, question4];
+    let answer = [answer1, answer2, answer3, answer4];
+    let compare = question.toString() === answer.toString();
+    if (question.toString() === answer.toString()) {
+        document.getElementById("submit").style.backgroundColor = "green";
+    } else {
+        document.getElementById("submit").style.backgroundColor = "red";
+    };
 }
 
 /**
