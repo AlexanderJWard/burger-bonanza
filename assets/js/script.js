@@ -227,8 +227,10 @@ function checkAnswer() {
     let compare = question.toString() === answer.toString();
     if (question.toString() === answer.toString()) {
         document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit - CORRECT";
+        incrementCorrect();
     } else {
         document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit - WRONG";
+        incrementIncorrect();
     };
     let numbers = [];
     for (let number of question) {
@@ -256,13 +258,16 @@ function checkAnswer() {
     document.getElementById("question-4").innerHTML = `${numbers[3]}`;
     toggleCheckbox();
     if (question1 !== answer1) {
-        document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
-    } else if (question2 !== answer2) {
-        document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
-    } else if (question3 !== answer3) {
-        document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
-    } else if (question4 !== answer4) {
-        document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.toggle("fa-solid");
+        document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
+    } 
+    if (question2 !== answer2) {
+        document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
+    } 
+    if (question3 !== answer3) {
+        document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
+    }
+    if (question4 !== answer4) {
+        document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
     }
 }
 
@@ -434,12 +439,30 @@ function startTimerMedium() {
     messageBoxStart();
     document.getElementById("message-box").classList.remove("hide");
     document.getElementById("selection").classList.add("hide");
+    document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
+    document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
+    document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
+    document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
+    document.getElementById("outer-checkbox").classList.add("display-hide");
+    document.getElementById("outer-checkbox").classList.remove("flex");
 }
+
+/**
+ * incrementCorrect gets the innerHTML of the correct-information span and increments by one.
+ */
 
 function incrementCorrect() {
-
+    let correct = document.getElementById("correct-increment").innerHTML;
+    let correctIncrement = ++correct;
+    document.getElementById("correct-increment").innerHTML = correctIncrement;
 }
 
-function incrementIncorrect() {
+/**
+ * incrementIncorrect gets the innerHTML of the incorrect-information span and increments by one.
+ */
 
+function incrementIncorrect() {
+    let inCorrect = document.getElementById("incorrect-increment").innerHTML;
+    let inCorrectIncrement = ++inCorrect;
+    document.getElementById("incorrect-increment").innerHTML = inCorrectIncrement;
 }
