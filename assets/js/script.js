@@ -6,15 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.getAttribute("game-difficulty") === "easy") {
                 document.getElementById("seconds").innerHTML = 10;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-easy");
-                displayGame();
+                document.getElementById("change").classList.toggle("hide");
+                toggleGame();
             } else if (this.getAttribute("game-difficulty") === "medium") {
                 document.getElementById("seconds").innerHTML = 6;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-medium");
-                displayGame();
+                document.getElementById("change").classList.toggle("hide");
+                toggleGame();
             } else if (this.getAttribute("game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
-                displayGame();
+                document.getElementById("change").classList.toggle("hide");
+                toggleGame();
             } else if (this.getAttribute("game-difficulty") === "start-easy") {
                 resetGame();
                 displayQuestion();
@@ -27,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetGame();
                 displayQuestion();
                 startTimerHard();
+            } else if (this.getAttribute("button-type") === "change-difficulty") {
+                resetGame();
+                toggleGame();
+                document.getElementById("change").classList.toggle("hide");
             } else if (this.getAttribute("button-type") === "reset") {
                 resetGame();
                 hideQuestion();
@@ -42,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     displayAnswer();
 })
 
-function displayGame() {
+function toggleGame() {
     document.getElementById("difficulty").classList.toggle("flex");
     document.getElementById("game-box").classList.toggle("flex");
 }
