@@ -4,10 +4,10 @@ body {
     display: flex;
     gap: 5rem;
     flex-wrap: wrap;
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/burger-background.jpg);
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    /* background-size: cover; */
     margin: 0;
     padding: 0;
 }
@@ -30,8 +30,11 @@ header {
     display: flex;
 }
 
-h1 {
+#outer-title {
     flex: 2;
+}
+
+h1 {
     font-family: "Fredoka One", sans-serif;
     font-size: 40px;
     margin: auto;
@@ -55,8 +58,10 @@ header button {
 }
 
 #difficulty {
+    justify-content: center;
+    align-items: center;
     flex: 1;
-    gap: 2rem;
+    gap: 5rem;
     justify-content: center;
     margin: 0 1rem;
 }
@@ -74,18 +79,51 @@ header button {
 }
 
 #easy {
-    background-color: green;
-    color: white;
+    background-color: white;
+    color: black;
+}
+
+#easy:hover {
+    animation-name: fill-easy;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 #medium {
-    background-color: orange;
-    color: white;
+    background-color: white;
+    color: black;
+}
+
+#medium:hover {
+    animation-name: fill-medium;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 #hard {
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
+}
+
+#hard:hover {
+    animation-name: fill-hard;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fill-easy {
+    from {background-color: white;}
+    to {background-color: rgba(182, 201, 75, 1);}
+}
+
+@keyframes fill-medium {
+    from {background-color: white;}
+    to {background-color: rgba(255, 219, 88, 1);}
+}
+
+@keyframes fill-hard {
+    from {background-color: white;}
+    to {background-color: rgba(187, 43, 27, 1);}
 }
 
 #outer-game-box {

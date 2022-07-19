@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.getAttribute("game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
+                smallHeader();
                 document.getElementById("change").classList.toggle("hide");
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "start-easy") {
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.getAttribute("button-type") === "change-difficulty") {
                 resetGame();
                 toggleGame();
+                bigHeader();
                 document.getElementById("change").classList.toggle("hide");
             } else if (this.getAttribute("button-type") === "reset") {
                 resetGame();
@@ -58,6 +60,7 @@ function toggleGame() {
 function bigHeader() {
     let title = document.getElementById("title");
     title.style.fontSize = "80px";
+    title.style.color = "black";
     title.style.marginTop = "5rem";
     title.style.backgroundColor = "white";
     title.style.border = "10px solid black";
@@ -66,7 +69,14 @@ function bigHeader() {
 }
 
 function smallHeader() {
-    
+    let title = document.getElementById("title");
+    title.style.fontSize = "40px";
+    title.style.color = "black";
+    title.style.marginTop = "0";
+    title.style.backgroundColor = "white";
+    title.style.border = "5px solid black";
+    title.style.borderRadius = "20px";
+    title.style.padding = "1rem";
 }
 
 /**
