@@ -4,7 +4,7 @@ body {
     display: flex;
     gap: 5rem;
     flex-wrap: wrap;
-    background-image: url(../images/burger-background.jpg);
+    background-image: url(../images/burgerBackground.jpg);
     background-position: center;
     background-repeat: repeat;
     /* background-size: cover; */
@@ -31,6 +31,7 @@ header {
 }
 
 #outer-title {
+    display: flex;
     flex: 2;
 }
 
