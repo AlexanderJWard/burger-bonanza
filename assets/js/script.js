@@ -59,6 +59,9 @@ function toggleGame() {
 
 function bigHeader() {
     let title = document.getElementById("title");
+    let outerHeader = document.getElementsByTagName("header")[0];
+    outerHeader.style.borderBottom = "none";
+    outerHeader.style.background = "none";
     title.style.fontSize = "80px";
     title.style.color = "black";
     title.style.marginTop = "5rem";
@@ -70,13 +73,15 @@ function bigHeader() {
 
 function smallHeader() {
     let title = document.getElementById("title");
+    let outerHeader = document.getElementsByTagName("header")[0];
+    outerHeader.style.borderBottom = "7px solid black";
+    outerHeader.style.backgroundColor = "white";
     title.style.fontSize = "40px";
     title.style.color = "black";
     title.style.marginTop = "0";
     title.style.backgroundColor = "white";
-    title.style.border = "5px solid black";
-    title.style.borderRadius = "20px";
-    title.style.padding = "1rem";
+    title.style.border = "none";
+    title.style.padding = "0.5rem";
 }
 
 /**
