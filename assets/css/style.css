@@ -2,7 +2,12 @@
 
 body {
     display: flex;
+    gap: 5rem;
     flex-wrap: wrap;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
@@ -10,7 +15,6 @@ body {
 header {
     display: flex;
     width: 100%;
-    height: 4rem;
     text-align: center;
 }
 
@@ -30,8 +34,7 @@ h1 {
     flex: 2;
     font-family: "Fredoka One", sans-serif;
     font-size: 40px;
-    margin: 0;
-    margin-top: 1rem;
+    margin: auto;
 }
 
 header div {
@@ -43,8 +46,8 @@ header div {
 header button {
     font-family: "Fredoka One", sans-serif;
     font-size: 20px;
-    border: 5px solid lightgray;
-    background-color: lightgray;
+    border: 4px solid black;
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 8px;
     margin: 0.5rem 0;
     height: inherit;
@@ -54,15 +57,49 @@ header button {
 #difficulty {
     flex: 1;
     gap: 2rem;
-    padding: 15rem 0;
     justify-content: center;
+    margin: 0 1rem;
 }
 
-#game-box {
+.btn-difficulty {
+    font-size: 35px;
+    font-family: "Fredoka One", sans-serif;
+    border: 5px solid lightgray;
+    background-color: lightgray;
+    border: 10px solid black;
+    border-radius: 50%;
+    height: 12rem;
+    width: 12rem;
+    cursor: pointer;
+}
+
+#easy {
+    background-color: green;
+    color: white;
+}
+
+#medium {
+    background-color: orange;
+    color: white;
+}
+
+#hard {
+    background-color: red;
+    color: white;
+}
+
+#outer-game-box {
     margin-top: 1rem;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+}
+
+#game-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rem 1rem;
+    margin: 0 1rem;
 }
 
 #outer-checkbox {
@@ -111,12 +148,12 @@ header button {
 }
 
 #question-1, #question-2, #question-3, #question-4 {
-    border: 5px solid white;
+    border: 5px solid rgba(255, 255, 255, 0);
     border-top: 5px solid lightgray;
 }
 
 #question-1 {
-    border-top: 5px solid white;
+    border-top: 5px solid rgba(255, 255, 255, 0);
 }
 
 #outer-timer-buttons {
@@ -138,17 +175,6 @@ header button {
     cursor: pointer;
 }
 
-.btn-difficulty {
-    font-size: 30px;
-    font-family: "Fredoka One", sans-serif;
-    border: 5px solid lightgray;
-    background-color: lightgray;
-    border-radius: 50%;
-    height: 12rem;
-    width: 12rem;
-    cursor: pointer;
-}
-
 #start-game {
     color: darkgray;
     font-size: 30px;
@@ -156,6 +182,7 @@ header button {
 
 #timer {
     display: flex;
+    font-family: "Fredoka One", sans-serif;
     border: 1px solid lightgray;
     background-color: lightgray;
     border-radius: 50%;
@@ -193,7 +220,7 @@ header button {
 }
 
 #answer-1, #answer-2, #answer-3, #answer-4 {
-    border: 5px solid white;
+    border: 5px solid rgba(255, 255, 255, 0);
     border-top: 5px solid lightgray;
 }
 
@@ -203,7 +230,7 @@ header button {
 }
 
 #answer-2 {
-    border: 5px solid white;
+    border: 5px solid rgba(255, 255, 255, 0);
 }
 
 #outer-score-submit-selection {

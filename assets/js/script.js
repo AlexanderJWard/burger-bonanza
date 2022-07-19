@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("difficulty").classList.toggle("flex");
+    bigHeader();
     let buttons = document.getElementsByClassName("btn");
     for (let button of buttons) {
         button.addEventListener("click", function () {
@@ -51,7 +52,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleGame() {
     document.getElementById("difficulty").classList.toggle("flex");
-    document.getElementById("game-box").classList.toggle("flex");
+    document.getElementById("outer-game-box").classList.toggle("flex");
+}
+
+function bigHeader() {
+    let title = document.getElementById("title");
+    title.style.fontSize = "80px";
+    title.style.marginTop = "5rem";
+    title.style.backgroundColor = "white";
+    title.style.border = "10px solid black";
+    title.style.borderRadius = "20px";
+    title.style.padding = "1rem";
+}
+
+function smallHeader() {
+    
 }
 
 /**
@@ -177,30 +192,30 @@ function displayAnswer() {
             if (numbers.length === 1) {
                 answer1.setAttribute("answer", `${numbers[0]}`);
                 answer1.innerHTML = `${answer[0]}`;
-                answer1.style.border = "5px solid white";
+                answer1.style.border = "5px solid rgba(255, 255, 255, 0)";
                 answer2.style.border = "5px solid green";
-                answer3.style.borderTop = "5px solid white";
+                answer3.style.borderTop = "5px solid rgba(255, 255, 255, 0)";
             } else if (numbers.length === 2) {
                 answer2.setAttribute("answer", `${numbers[1]}`);
                 answer2.innerHTML = `${answer[1]}`;
-                answer2.style.border = "5px solid white";
+                answer2.style.border = "5px solid rgba(255, 255, 255, 0)";
                 answer2.style.borderTop = "5px solid darkgray";
                 answer3.style.border = "5px solid green";
-                answer4.style.borderTop = "5px solid white";
+                answer4.style.borderTop = "5px solid rgba(255, 255, 255, 0)";
             } else if (numbers.length === 3) {
                 answer3.setAttribute("answer", `${numbers[2]}`);
                 answer3.innerHTML = `${answer[2]}`;
-                answer3.style.border = "5px solid white";
+                answer3.style.border = "5px solid rgba(255, 255, 255, 0)";
                 answer3.style.borderTop = "5px solid darkgray";
                 answer4.style.border = "5px solid green";
             } else if (numbers.length === 4) {
                 answer4.setAttribute("answer", `${numbers[3]}`);
                 answer4.innerHTML = `${answer[3]}`;
-                answer4.style.border = "5px solid white";
+                answer4.style.border = "5px solid rgba(255, 255, 255, 0)";
                 answer4.style.borderTop = "5px solid darkgray";
                 answer1.style.border = "5px solid green";
                 answer4.style.borderTop = "5px solid darkgray";
-                answer2.style.borderTop = "5px solid white"
+                answer2.style.borderTop = "5px solid rgba(255, 255, 255, 0)"
                 numbers = [];
             }
         })
@@ -427,12 +442,12 @@ function startTimerMedium() {
     answer1.innerHTML = "";
     answer1.style.border = "5px solid green";
     answer2.innerHTML = "";
-    answer2.style.border = "5px solid white";
+    answer2.style.border = "5px solid rgba(255, 255, 255, 0)";
     answer3.innerHTML = "";
-    answer3.style.border = "5px solid white";
+    answer3.style.border = "5px solid rgba(255, 255, 255, 0)";
     answer3.style.borderTop = "5px solid darkgray";
     answer4.innerHTML = "";
-    answer4.style.border = "5px solid white";
+    answer4.style.border = "5px solid rgba(255, 255, 255, 0)";
     answer4.style.borderTop = "5px solid darkgray";
     document.getElementById("start-game").classList.remove("hide");
     document.getElementById("reset-game").classList.add("hide");
