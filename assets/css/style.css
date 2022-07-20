@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
+/* <a href="https://www.vecteezy.com/free-vector/burger-background">Burger Background Vectors by Vecteezy</a> */
+
 body {
     display: flex;
     flex-wrap: wrap;
@@ -8,12 +10,6 @@ body {
     background-repeat: repeat;
     margin: 0;
     padding: 0;
-}
-
-header {
-    display: flex;
-    width: 100%;
-    text-align: center;
 }
 
 .hide {
@@ -26,6 +22,12 @@ header {
 
 .flex {
     display: flex;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    text-align: center;
 }
 
 #outer-title {
@@ -172,6 +174,7 @@ header button {
     align-items: center;
     flex-direction: column;
     height: inherit;
+    margin: 0 1rem;
 }
 
 .question-box {
@@ -180,14 +183,14 @@ header button {
 }
 
 .question-box img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
 }
 
 #question-1, #question-2, #question-3, #question-4 {
-    border: 5px solid rgba(255, 255, 255, 0);
-    border-top: 5px solid lightgray;
+    border: 7px solid rgba(255, 255, 255, 0);
+    border-top: 7px solid black;
 }
 
 #question-1 {
@@ -200,7 +203,7 @@ header button {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 600px;
+    /* height: 600px; */
     margin: 0 1rem;
 }
 
@@ -268,7 +271,7 @@ header button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.8);
     border: 7px solid black;
     border-top: none;
     border-radius: 0 0 10px 10px;
@@ -280,18 +283,18 @@ header button {
 }
 
 .answer-box img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
 }
 
 #answer-1, #answer-2, #answer-3, #answer-4 {
-    border: 5px solid rgba(255, 255, 255, 0);
-    border-top: 5px solid lightgray;
+    border: 7px solid rgba(255, 255, 255, 0);
+    border-top: 7px solid black;
 }
 
 #answer-1 {
-    border: 5px solid green;
+    border: 7px solid rgba(182, 201, 75, 1);
     border-radius: 8px;
 }
 
@@ -307,6 +310,7 @@ header button {
 
 #outer-score-submit {
     display: flex;
+    flex-wrap: wrap;
 }
 
 #outer-score {
@@ -337,29 +341,30 @@ header button {
 
 #outer-selection-info {
     display: flex;
-    padding-left: 5rem;
+    justify-content: center;
 }
 
 #grid {
-    display: grid;
+    display: flex;
 }
 
-#selection, #message-box {
+/* #selection, #message-box {
     grid-column: 1;
     grid-row: 1;
-}
+} */
 
 #selection {
-    display: flex;
+    /* display: flex; */
     gap: 0.5rem;
     flex-wrap: wrap;
-    width: 26rem;
-    height: 18rem;
+    width: 28rem;
+    height: 20rem;
 
 }
 
 .selection-box {
-    border: 5px solid lightgray;
+    border: 7px solid black;
+    background-color: white;
     border-radius: 8px;
     height: 8rem;
     width: 12rem;
@@ -368,13 +373,14 @@ header button {
 }
 
 .selection-box input {
-    object-fit: contain;
-    width: 100%;
+    object-fit: cover;
+    width: inherit;
 }
 
 #message-box {
     display: flex;
-    border: 5px solid lightgray;
+    border: 7px solid black;
+    background-color: white;
     border-radius: 8px;
     width: 25rem;
     height: 17rem;
@@ -382,4 +388,53 @@ header button {
 
 #message-box p {
     margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    /* #outer-checkbox {
+        order: 1;
+    }
+
+    #outer-question {
+        order: 2;
+    }
+
+    #outer-answer {
+        order: 3;
+    } */
+
+    #question-answer-box {
+        gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 7px solid black;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+    }
+
+    #outer-timer-buttons {
+        gap: 2rem;
+        margin: 1rem 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #outer-start-game {
+        order: 1;
+    }
+
+    #outer-reset-game {
+        order: 2;
+    }
+
+    #timer {
+        order: 3;
+    }
+
+    #message-box {
+        width: 20rem;
+        height: 12rem;
+    }
 }
