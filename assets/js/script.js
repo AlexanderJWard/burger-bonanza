@@ -7,18 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.getAttribute("game-difficulty") === "easy") {
                 document.getElementById("seconds").innerHTML = 10;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-easy");
+                smallHeader();
                 document.getElementById("change").classList.toggle("hide");
+                document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(182, 201, 75)";
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "medium") {
                 document.getElementById("seconds").innerHTML = 6;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-medium");
+                smallHeader();
                 document.getElementById("change").classList.toggle("hide");
+                document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(255, 219, 88)";
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
                 smallHeader();
                 document.getElementById("change").classList.toggle("hide");
+                document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(187, 43, 27)";
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "start-easy") {
                 resetGame();
@@ -207,30 +212,47 @@ function displayAnswer() {
             if (numbers.length === 1) {
                 answer1.setAttribute("answer", `${numbers[0]}`);
                 answer1.innerHTML = `${answer[0]}`;
-                answer1.style.border = "5px solid rgba(255, 255, 255, 0)";
-                answer2.style.border = "5px solid green";
-                answer3.style.borderTop = "5px solid rgba(255, 255, 255, 0)";
+                answer1.style.backgroundColor = "rgb(255, 255, 255)";
+                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                    answer2.style.backgroundColor = "rgb(182, 201, 75)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                    answer2.style.backgroundColor = "rgb(255, 219, 88)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                    answer2.style.backgroundColor = "rgb(187, 43, 27)";
+                }  
             } else if (numbers.length === 2) {
                 answer2.setAttribute("answer", `${numbers[1]}`);
                 answer2.innerHTML = `${answer[1]}`;
-                answer2.style.border = "5px solid rgba(255, 255, 255, 0)";
-                answer2.style.borderTop = "5px solid darkgray";
-                answer3.style.border = "5px solid green";
-                answer4.style.borderTop = "5px solid rgba(255, 255, 255, 0)";
+                answer2.style.backgroundColor = "rgb(255, 255, 255)";
+                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                    answer3.style.backgroundColor = "rgb(182, 201, 75)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                    answer3.style.backgroundColor = "rgb(255, 219, 88)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                    answer3.style.backgroundColor = "rgb(187, 43, 27)";
+                }
             } else if (numbers.length === 3) {
                 answer3.setAttribute("answer", `${numbers[2]}`);
                 answer3.innerHTML = `${answer[2]}`;
-                answer3.style.border = "5px solid rgba(255, 255, 255, 0)";
-                answer3.style.borderTop = "5px solid darkgray";
-                answer4.style.border = "5px solid green";
+                answer3.style.backgroundColor = "rgb(255, 255, 255)";
+                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                    answer4.style.backgroundColor = "rgb(182, 201, 75)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                    answer4.style.backgroundColor = "rgb(255, 219, 88)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                    answer4.style.backgroundColor = "rgb(187, 43, 27)";
+                }
             } else if (numbers.length === 4) {
                 answer4.setAttribute("answer", `${numbers[3]}`);
                 answer4.innerHTML = `${answer[3]}`;
-                answer4.style.border = "5px solid rgba(255, 255, 255, 0)";
-                answer4.style.borderTop = "5px solid darkgray";
-                answer1.style.border = "5px solid green";
-                answer4.style.borderTop = "5px solid darkgray";
-                answer2.style.borderTop = "5px solid rgba(255, 255, 255, 0)"
+                answer4.style.backgroundColor = "rgb(255, 255, 255)";
+                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                    answer1.style.backgroundColor = "rgb(182, 201, 75)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                    answer1.style.backgroundColor = "rgb(255, 219, 88)";
+                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                    answer1.style.backgroundColor = "rgb(187, 43, 27)";
+                }
                 numbers = [];
             }
         })
