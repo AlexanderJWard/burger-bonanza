@@ -48,9 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.getAttribute("button-type") === "submit") {
                 checkAnswer();
                 toggleSelection();
-                document.getElementById("submit").classList.toggle("hide");
-                document.getElementById("reset-game").classList.toggle("hide");
-                document.getElementById("start-game").classList.toggle("hide");
+                document.getElementById("outer-submit").classList.toggle("hide");
+                document.getElementById("outer-reset-game").classList.toggle("hide");
+                document.getElementById("outer-start-game").classList.toggle("hide");
             }
         })
     }
@@ -209,48 +209,49 @@ function displayAnswer() {
             let answer2 = document.getElementById("answer-2");
             let answer3 = document.getElementById("answer-3");
             let answer4 = document.getElementById("answer-4");
+            let type = document.getElementById("start-game").getAttribute("game-difficulty");
             if (numbers.length === 1) {
                 answer1.setAttribute("answer", `${numbers[0]}`);
                 answer1.innerHTML = `${answer[0]}`;
                 answer1.style.backgroundColor = "rgb(255, 255, 255)";
-                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                if (type === "start-easy") {
                     answer2.style.backgroundColor = "rgb(182, 201, 75)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                } else if (type === "start-medium") {
                     answer2.style.backgroundColor = "rgb(255, 219, 88)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                } else if (type === "start-hard") {
                     answer2.style.backgroundColor = "rgb(187, 43, 27)";
                 }  
             } else if (numbers.length === 2) {
                 answer2.setAttribute("answer", `${numbers[1]}`);
                 answer2.innerHTML = `${answer[1]}`;
                 answer2.style.backgroundColor = "rgb(255, 255, 255)";
-                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                if (type === "start-easy") {
                     answer3.style.backgroundColor = "rgb(182, 201, 75)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                } else if (type === "start-medium") {
                     answer3.style.backgroundColor = "rgb(255, 219, 88)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                } else if (type === "start-hard") {
                     answer3.style.backgroundColor = "rgb(187, 43, 27)";
                 }
             } else if (numbers.length === 3) {
                 answer3.setAttribute("answer", `${numbers[2]}`);
                 answer3.innerHTML = `${answer[2]}`;
                 answer3.style.backgroundColor = "rgb(255, 255, 255)";
-                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                if (type === "start-easy") {
                     answer4.style.backgroundColor = "rgb(182, 201, 75)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                } else if (type === "start-medium") {
                     answer4.style.backgroundColor = "rgb(255, 219, 88)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                } else if (type === "start-hard") {
                     answer4.style.backgroundColor = "rgb(187, 43, 27)";
                 }
             } else if (numbers.length === 4) {
                 answer4.setAttribute("answer", `${numbers[3]}`);
                 answer4.innerHTML = `${answer[3]}`;
                 answer4.style.backgroundColor = "rgb(255, 255, 255)";
-                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                if (type === "start-easy") {
                     answer1.style.backgroundColor = "rgb(182, 201, 75)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                } else if (type === "start-medium") {
                     answer1.style.backgroundColor = "rgb(255, 219, 88)";
-                } else if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                } else if (type === "start-hard") {
                     answer1.style.backgroundColor = "rgb(187, 43, 27)";
                 }
                 numbers = [];
@@ -379,8 +380,8 @@ let nowTime;
  function startTimerEasy() {
     let time = 10;
     document.getElementById("seconds").innerHTML = time;
-    document.getElementById("start-game").classList.toggle("hide");
-    document.getElementById("reset-game").classList.toggle("hide");
+    document.getElementById("outer-start-game").classList.toggle("hide");
+    document.getElementById("outer-reset-game").classList.toggle("hide");
     messageBoxDuring();
     function timer() {
         time--;
@@ -389,7 +390,7 @@ let nowTime;
             nowTime = setTimeout(timer, 1000);
         } else {
             toggleSelection();
-            document.getElementById("submit").classList.toggle("hide");
+            document.getElementById("outer-submit").classList.toggle("hide");
             hideQuestion();
         }
     }
@@ -409,8 +410,8 @@ let nowTime;
 function startTimerMedium() {
     let time = 6;
     document.getElementById("seconds").innerHTML = time;
-    document.getElementById("start-game").classList.toggle("hide");
-    document.getElementById("reset-game").classList.toggle("hide");
+    document.getElementById("outer-start-game").classList.toggle("hide");
+    document.getElementById("outer-reset-game").classList.toggle("hide");
     messageBoxDuring();
     function timer() {
         time--;
@@ -419,7 +420,7 @@ function startTimerMedium() {
             nowTime = setTimeout(timer, 1000);
         } else {
             toggleSelection();
-            document.getElementById("submit").classList.toggle("hide");
+            document.getElementById("outer-submit").classList.toggle("hide");
             hideQuestion();
         }
     }
@@ -439,8 +440,8 @@ function startTimerMedium() {
  function startTimerHard() {
     let time = 3;
     document.getElementById("seconds").innerHTML = time;
-    document.getElementById("reset-game").classList.toggle("hide");
-    document.getElementById("start-game").classList.toggle("hide");
+    document.getElementById("outer-reset-game").classList.toggle("hide");
+    document.getElementById("outer-start-game").classList.toggle("hide");
     messageBoxDuring();
     function timer() {
         time--;
@@ -449,7 +450,7 @@ function startTimerMedium() {
             nowTime = setTimeout(timer, 1000);
         } else {
             toggleSelection();
-            document.getElementById("submit").classList.toggle("hide");
+            document.getElementById("outer-submit").classList.toggle("hide");
             hideQuestion();
         }
     }
@@ -471,24 +472,29 @@ function startTimerMedium() {
     let type = document.getElementById("start-game").getAttribute("game-difficulty");
     if (type === "start-easy") {
         document.getElementById("seconds").innerHTML = 10;
+        answer1.style.backgroundColor = "rgb(182, 201, 75)";
     } else if (type === "start-medium") {
         document.getElementById("seconds").innerHTML = 6;
+        answer1.style.backgroundColor = "rgb(255, 219, 88)";
     } else if (type === "start-hard") {
         document.getElementById("seconds").innerHTML = 3;
+        answer1.style.backgroundColor = "rgb(187, 43, 27)";
     } 
+
+    
+
+
+
     answer1.innerHTML = "";
-    answer1.style.border = "5px solid green";
     answer2.innerHTML = "";
-    answer2.style.border = "5px solid rgba(255, 255, 255, 0)";
+    answer2.style.backgroundColor = "rgb(255, 255, 255)";
     answer3.innerHTML = "";
-    answer3.style.border = "5px solid rgba(255, 255, 255, 0)";
-    answer3.style.borderTop = "5px solid darkgray";
+    answer3.style.backgroundColor = "rgb(255, 255, 255)";
     answer4.innerHTML = "";
-    answer4.style.border = "5px solid rgba(255, 255, 255, 0)";
-    answer4.style.borderTop = "5px solid darkgray";
-    document.getElementById("start-game").classList.remove("hide");
-    document.getElementById("reset-game").classList.add("hide");
-    document.getElementById("submit").classList.add("hide");
+    answer4.style.backgroundColor = "rgb(255, 255, 255)";
+    document.getElementById("outer-start-game").classList.remove("hide");
+    document.getElementById("outer-reset-game").classList.add("hide");
+    document.getElementById("outer-submit").classList.add("hide");
     messageBoxStart();
     document.getElementById("message-box").classList.remove("hide");
     document.getElementById("selection").classList.add("hide");
