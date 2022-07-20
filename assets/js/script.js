@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 smallHeader();
                 document.getElementById("change").classList.toggle("hide");
                 document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(182, 201, 75)";
+                document.getElementById("answer-1").style.backgroundColor = "rgb(182, 201, 75)";
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "medium") {
                 document.getElementById("seconds").innerHTML = 6;
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 smallHeader();
                 document.getElementById("change").classList.toggle("hide");
                 document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(255, 219, 88)";
+                document.getElementById("answer-1").style.backgroundColor = "rgb(255, 219, 88)";
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 smallHeader();
                 document.getElementById("change").classList.toggle("hide");
                 document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(187, 43, 27)";
+                document.getElementById("answer-1").style.backgroundColor = "rgb(187, 43, 27)";
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "start-easy") {
                 resetGame();
@@ -39,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 startTimerHard();
             } else if (this.getAttribute("button-type") === "change-difficulty") {
                 resetGame();
+                hideQuestion();
                 toggleGame();
                 bigHeader();
                 document.getElementById("change").classList.toggle("hide");
@@ -84,7 +88,7 @@ function smallHeader() {
     title.style.fontSize = "40px";
     title.style.color = "black";
     title.style.marginTop = "0";
-    title.style.backgroundColor = "white";
+    title.style.background = "none";
     title.style.border = "none";
     title.style.padding = "0.5rem";
 }
@@ -183,6 +187,8 @@ function displayAnswer() {
             } else if (this.getAttribute("game-difficulty") === "start-hard") {
                 numbers = [];
             } else if (this.getAttribute("button-type") === "reset") {
+                numbers = [];
+            } else if (this.getAttribute("button-type") === "change-difficulty") {
                 numbers = [];
             }
             let answer = [];
@@ -469,6 +475,17 @@ function startTimerMedium() {
     let answer3 = document.getElementById("answer-3");
     let answer4 = document.getElementById("answer-4");
     clearTimeout(nowTime);
+    answer1.innerHTML = "";
+    answer1.setAttribute("answer", "");
+    answer2.innerHTML = "";
+    answer2.setAttribute("answer", "");
+    answer2.style.backgroundColor = "rgb(255, 255, 255)";
+    answer3.innerHTML = "";
+    answer3.setAttribute("answer", "");
+    answer3.style.backgroundColor = "rgb(255, 255, 255)";
+    answer4.innerHTML = "";
+    answer4.setAttribute("answer", "");
+    answer4.style.backgroundColor = "rgb(255, 255, 255)";
     let type = document.getElementById("start-game").getAttribute("game-difficulty");
     if (type === "start-easy") {
         document.getElementById("seconds").innerHTML = 10;
@@ -480,18 +497,6 @@ function startTimerMedium() {
         document.getElementById("seconds").innerHTML = 3;
         answer1.style.backgroundColor = "rgb(187, 43, 27)";
     } 
-
-    
-
-
-
-    answer1.innerHTML = "";
-    answer2.innerHTML = "";
-    answer2.style.backgroundColor = "rgb(255, 255, 255)";
-    answer3.innerHTML = "";
-    answer3.style.backgroundColor = "rgb(255, 255, 255)";
-    answer4.innerHTML = "";
-    answer4.style.backgroundColor = "rgb(255, 255, 255)";
     document.getElementById("outer-start-game").classList.remove("hide");
     document.getElementById("outer-reset-game").classList.add("hide");
     document.getElementById("outer-submit").classList.add("hide");
