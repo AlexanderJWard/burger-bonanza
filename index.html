@@ -23,6 +23,10 @@
         </div>
     </header>
     <noscript>JavaScript is required to use this page.</noscript>
+    <div class="display-hide" id="rotate">
+        <h2>Burger Bonanza</h2>
+        <p>Please rotate your device!</p>
+    </div>
     <div class="display-hide" id="difficulty">
         <button class="btn btn-difficulty" id="easy" game-difficulty="easy">EASY</button>
         <button class="btn btn-difficulty" id="medium" game-difficulty="medium">MEDIUM</button>
@@ -88,8 +92,8 @@
                     </div>
                 </div>
                 <div id="outer-selection-info">
-                    <div id="selection-title"><h2>Select your answer!</h2></div>
-                    <div class="" id="selection">
+                    <div class="hide" id="selection-title"><h2>Select your answer!</h2></div>
+                    <div class="display-hide" id="selection">
                         <div class="selection-box" id="selection-1"><input class="btn selection-btn" type="image"
                                 src="assets/images/burgerMeat.png" button-number="1"></div>
                         <div class="selection-box" id="selection-2"><input class="btn selection-btn" type="image"
@@ -99,7 +103,7 @@
                         <div class="selection-box" id="selection-4"><input class="btn selection-btn" type="image"
                                 src="assets/images/cheese.png" button-number="4"></div>
                     </div>
-                    <div class="display-hide" id="message-box">
+                    <div class="display-hide flex" id="message-box">
                         <p id="message-box-text">Placeholder Message: Before Start</p>
                     </div>
                 </div>

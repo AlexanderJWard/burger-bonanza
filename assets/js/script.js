@@ -351,8 +351,9 @@ function toggleCheckbox() {
  */
 
 function toggleSelection() {
-    document.getElementById("message-box").classList.toggle("hide");
-    document.getElementById("selection").classList.toggle("hide");
+    document.getElementById("message-box").classList.toggle("flex");
+    document.getElementById("selection-title").classList.toggle("hide");
+    document.getElementById("selection").classList.toggle("flex");
 }
 
 /**
@@ -501,8 +502,9 @@ function startTimerMedium() {
     document.getElementById("outer-reset-game").classList.add("hide");
     document.getElementById("outer-submit").classList.add("hide");
     messageBoxStart();
-    document.getElementById("message-box").classList.remove("hide");
-    document.getElementById("selection").classList.add("hide");
+    document.getElementById("message-box").classList.add("flex");
+    document.getElementById("selection-title").classList.add("hide");
+    document.getElementById("selection").classList.remove("flex");
     document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
     document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
     document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
