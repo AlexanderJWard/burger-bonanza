@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("seconds").innerHTML = 10;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-easy");
                 smallHeader();
-                document.getElementById("change").classList.toggle("hide");
+                document.getElementById("change").classList.toggle("display-hide");
                 document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(182, 201, 75)";
                 document.getElementById("answer-1").style.backgroundColor = "rgb(182, 201, 75)";
                 toggleGame();
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("seconds").innerHTML = 6;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-medium");
                 smallHeader();
-                document.getElementById("change").classList.toggle("hide");
+                document.getElementById("change").classList.toggle("display-hide");
                 document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(255, 219, 88)";
                 document.getElementById("answer-1").style.backgroundColor = "rgb(255, 219, 88)";
                 toggleGame();
@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("seconds").innerHTML = 3;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
                 smallHeader();
-                document.getElementById("change").classList.toggle("hide");
-                document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(187, 43, 27)";
-                document.getElementById("answer-1").style.backgroundColor = "rgb(187, 43, 27)";
+                document.getElementById("change").classList.toggle("display-hide");
+                document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(221, 53, 34)";
+                document.getElementById("answer-1").style.backgroundColor = "rgb(221, 53, 34)";
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "start-easy") {
                 resetGame();
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 hideQuestion();
                 toggleGame();
                 bigHeader();
-                document.getElementById("change").classList.toggle("hide");
+                document.getElementById("change").classList.toggle("display-hide");
             } else if (this.getAttribute("button-type") === "reset") {
                 resetGame();
                 hideQuestion();
@@ -225,7 +225,7 @@ function displayAnswer() {
                 } else if (type === "start-medium") {
                     answer2.style.backgroundColor = "rgb(255, 219, 88)";
                 } else if (type === "start-hard") {
-                    answer2.style.backgroundColor = "rgb(187, 43, 27)";
+                    answer2.style.backgroundColor = "rgb(221, 53, 34)";
                 }  
             } else if (numbers.length === 2) {
                 answer2.setAttribute("answer", `${numbers[1]}`);
@@ -236,7 +236,7 @@ function displayAnswer() {
                 } else if (type === "start-medium") {
                     answer3.style.backgroundColor = "rgb(255, 219, 88)";
                 } else if (type === "start-hard") {
-                    answer3.style.backgroundColor = "rgb(187, 43, 27)";
+                    answer3.style.backgroundColor = "rgb(221, 53, 34)";
                 }
             } else if (numbers.length === 3) {
                 answer3.setAttribute("answer", `${numbers[2]}`);
@@ -247,7 +247,7 @@ function displayAnswer() {
                 } else if (type === "start-medium") {
                     answer4.style.backgroundColor = "rgb(255, 219, 88)";
                 } else if (type === "start-hard") {
-                    answer4.style.backgroundColor = "rgb(187, 43, 27)";
+                    answer4.style.backgroundColor = "rgb(221, 53, 34)";
                 }
             } else if (numbers.length === 4) {
                 answer4.setAttribute("answer", `${numbers[3]}`);
@@ -258,7 +258,7 @@ function displayAnswer() {
                 } else if (type === "start-medium") {
                     answer1.style.backgroundColor = "rgb(255, 219, 88)";
                 } else if (type === "start-hard") {
-                    answer1.style.backgroundColor = "rgb(187, 43, 27)";
+                    answer1.style.backgroundColor = "rgb(221, 53, 34)";
                 }
                 numbers = [];
             }
@@ -290,7 +290,7 @@ function checkAnswer() {
     let question = [question1, question2, question3, question4];
     let answer = [answer1, answer2, answer3, answer4];
     let compare = question.toString() === answer.toString();
-    if (question.toString() === answer.toString()) {
+    if (compare) {
         document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit - CORRECT";
         incrementCorrect();
     } else {
@@ -495,7 +495,7 @@ function startTimerMedium() {
         answer1.style.backgroundColor = "rgb(255, 219, 88)";
     } else if (type === "start-hard") {
         document.getElementById("seconds").innerHTML = 3;
-        answer1.style.backgroundColor = "rgb(187, 43, 27)";
+        answer1.style.backgroundColor = "rgb(221, 53, 34)";
     } 
     document.getElementById("outer-start-game").classList.remove("hide");
     document.getElementById("outer-reset-game").classList.add("hide");
