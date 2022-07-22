@@ -319,7 +319,6 @@ header button {
 }
 
 #selection-title {
-    display: flex;
     background-color: white;
     border: 7px solid black;
     border-radius: 10px;
@@ -328,6 +327,7 @@ header button {
 
 #selection-title h2 {
     margin: auto;
+    text-align: center;
     padding: 0;
     font-family: "Fredoka One", sans-serif;
     font-size: 40px;
@@ -428,12 +428,19 @@ header button {
 }
 
 @media only screen and (max-width: 600px) {
+    #question-answer-box {
+        gap: 3rem;
+        padding-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
     #game-box {
         gap: 5rem;
     }
     
     #question-answer-box {
-        gap: 1rem;
+        gap: 3rem;
         padding-top: 1rem;
         justify-content: flex-end;
     }
@@ -473,6 +480,10 @@ header button {
         order: 3;
     }
 
+    #outer-score-submit-selection {
+        width: 20rem;
+    }
+
     #outer-score-submit {
         order: 2;
     }
@@ -491,6 +502,7 @@ header button {
     }
 
     #message-box {
+        margin: auto;
         width: 20rem;
         height: 12rem;
     }
