@@ -231,7 +231,7 @@ header button {
 }
 
 .btn-border {
-    border: 7px solid black;
+    border: 5px solid black;
 }
 
 #start-game {
@@ -242,7 +242,7 @@ header button {
 #timer {
     display: flex;
     font-family: "Fredoka One", sans-serif;
-    border: 7px solid black;
+    border: 5px solid black;
     background-color: white;
     border-radius: 50%;
     height: 8rem;
@@ -288,27 +288,42 @@ header button {
     gap: 3rem;
     flex-direction: column;
     width: 28rem;
+    margin-bottom: 2rem;
 }
 
 #outer-score-submit {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #outer-score {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2.5rem;
-    margin-left: 3.8rem;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 10px;
     width: 12rem;
+    margin-top: 2rem;
+}
+
+#outer-score hr {
+    align-self: center;
+    border: 2.5px solid black;
+    background-color: black;
+    width: 80%;
+    margin: 0;
 }
 
 .score-box {
-    padding-left: 2rem;
-    border: 5px solid lightgray;
-    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    font-family: "Fredoka One", sans-serif;
+    font-size: 30px;
+}
+
+.score-box p {
+    margin: 0;
 }
 
 #outer-submit {
@@ -324,9 +339,11 @@ header button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #selection-title {
+    width: 20rem;
     background-color: white;
     border: 7px solid black;
     border-radius: 10px;
@@ -334,11 +351,11 @@ header button {
 }
 
 #selection-title h2 {
-    margin: auto;
+    margin: 0.5rem;
     text-align: center;
     padding: 0;
     font-family: "Fredoka One", sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     color: black;
 }
 
@@ -352,7 +369,6 @@ header button {
 
 .selection-box {
     background-color: white;
-    border: 7px solid black;
     border-radius: 8px;
     height: 8rem;
     width: 12rem;
@@ -367,7 +383,6 @@ header button {
 }
 
 #message-box {
-    border: 7px solid black;
     background-color: white;
     border-radius: 8px;
     width: 26rem;
@@ -425,7 +440,7 @@ header button {
 }
 
 
-@media only screen and (max-width: 1035px) {
+@media only screen and (max-width: 1100px) {
     #outer-score-submit {
         order: 2;
     }

@@ -278,7 +278,7 @@ function displayAnswer() {
  * 
  * The function will put them into two arrays and compare the contents using toString().
  * If correct the message box innerHTML will change and correct score will go up. If the compare
- * shows false the message box innerHTML will change and incorrect score will go up.
+ * shows false the message box innerHTML will change and wrong score will go up.
  * 
  * The question box images are then replaced with images of the question before it was hidden with question
  * marks so the player can visually see the difference between their answer and the question.
@@ -301,7 +301,7 @@ function checkAnswer() {
         incrementCorrect();
     } else {
         document.getElementById("message-box-text").innerHTML = "Placeholder Message: After Submit - WRONG";
-        incrementIncorrect();
+        incrementWrong();
     };
     let numbers = [];
     for (let number of question) {
@@ -540,11 +540,11 @@ function incrementCorrect() {
 }
 
 /**
- * incrementIncorrect gets the innerHTML of the incorrect-information span and increments by one.
+ * incrementWrong gets the innerHTML of the wrong-information span and increments by one.
  */
 
-function incrementIncorrect() {
-    let inCorrect = document.getElementById("incorrect-increment").innerHTML;
-    let inCorrectIncrement = ++inCorrect;
-    document.getElementById("incorrect-increment").innerHTML = inCorrectIncrement;
+function incrementWrong() {
+    let wrong = document.getElementById("wrong-increment").innerHTML;
+    let wrongIncrement = ++wrong;
+    document.getElementById("wrong-increment").innerHTML = wrongIncrement;
 }
