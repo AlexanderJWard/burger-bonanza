@@ -52,6 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (this.getAttribute("button-type") === "submit") {
                 checkAnswer();
                 toggleSelection();
+                document.getElementById("answer-1").style.backgroundColor = "white";
+                document.getElementById("answer-2").style.backgroundColor = "white";
+                document.getElementById("answer-3").style.backgroundColor = "white";
+                document.getElementById("answer-4").style.backgroundColor = "white";
                 document.getElementById("outer-submit").classList.toggle("hide");
                 document.getElementById("outer-reset-game").classList.toggle("hide");
                 document.getElementById("outer-start-game").classList.toggle("hide");
@@ -188,6 +192,8 @@ function displayAnswer() {
                 numbers = [];
             } else if (this.getAttribute("button-type") === "reset") {
                 numbers = [];
+            } else if (this.getAttribute("button-type") === "submit") {
+                numbers = [];
             } else if (this.getAttribute("button-type") === "change-difficulty") {
                 numbers = [];
             }
@@ -323,16 +329,24 @@ function checkAnswer() {
     document.getElementById("question-4").innerHTML = `${numbers[3]}`;
     toggleCheckbox();
     if (question1 !== answer1) {
-        document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
-    } 
+        document.getElementById("checkbox-1").getElementsByClassName("cross")[0].classList.toggle("display-hide");
+    } else {
+        document.getElementById("checkbox-1").getElementsByClassName("check")[0].classList.toggle("display-hide");
+    }
     if (question2 !== answer2) {
-        document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
-    } 
+        document.getElementById("checkbox-2").getElementsByClassName("cross")[0].classList.toggle("display-hide");
+    } else {
+        document.getElementById("checkbox-2").getElementsByClassName("check")[0].classList.toggle("display-hide");
+    }
     if (question3 !== answer3) {
-        document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
+        document.getElementById("checkbox-3").getElementsByClassName("cross")[0].classList.toggle("display-hide");
+    } else {
+        document.getElementById("checkbox-3").getElementsByClassName("check")[0].classList.toggle("display-hide");
     }
     if (question4 !== answer4) {
-        document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.remove("fa-solid");
+        document.getElementById("checkbox-4").getElementsByClassName("cross")[0].classList.toggle("display-hide");
+    } else {
+        document.getElementById("checkbox-4").getElementsByClassName("check")[0].classList.toggle("display-hide");
     }
 }
 
@@ -341,8 +355,7 @@ function checkAnswer() {
  */
 
 function toggleCheckbox() {
-    document.getElementById("outer-checkbox").classList.toggle("display-hide");
-    document.getElementById("outer-checkbox").classList.toggle("flex");
+    document.getElementById("outer-checkbox").classList.toggle("hide");
 }
 
 /**
@@ -505,12 +518,15 @@ function startTimerMedium() {
     document.getElementById("message-box").classList.add("flex");
     document.getElementById("selection-title").classList.remove("flex");
     document.getElementById("selection").classList.remove("flex");
-    document.getElementById("checkbox-1").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
-    document.getElementById("checkbox-2").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
-    document.getElementById("checkbox-3").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
-    document.getElementById("checkbox-4").getElementsByClassName("fa-circle-check")[0].classList.add("fa-solid");
-    document.getElementById("outer-checkbox").classList.add("display-hide");
-    document.getElementById("outer-checkbox").classList.remove("flex");
+    document.getElementById("checkbox-1").getElementsByClassName("check")[0].classList.add("display-hide");
+    document.getElementById("checkbox-1").getElementsByClassName("cross")[0].classList.add("display-hide");
+    document.getElementById("checkbox-2").getElementsByClassName("check")[0].classList.add("display-hide");
+    document.getElementById("checkbox-2").getElementsByClassName("cross")[0].classList.add("display-hide");
+    document.getElementById("checkbox-3").getElementsByClassName("check")[0].classList.add("display-hide");
+    document.getElementById("checkbox-3").getElementsByClassName("cross")[0].classList.add("display-hide");
+    document.getElementById("checkbox-4").getElementsByClassName("check")[0].classList.add("display-hide");
+    document.getElementById("checkbox-4").getElementsByClassName("cross")[0].classList.add("display-hide");
+    document.getElementById("outer-checkbox").classList.add("hide");
 }
 
 /**
