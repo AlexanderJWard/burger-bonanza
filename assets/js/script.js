@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 toggleGame();
                 bigHeader();
                 document.getElementById("change").classList.toggle("display-hide");
+                document.getElementById("correct-increment").innerHTML = 0;
+                document.getElementById("wrong-increment").innerHTML = 0;
             } else if (this.getAttribute("button-type") === "reset") {
                 resetGame();
                 hideQuestion();
