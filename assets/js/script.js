@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("difficulty").classList.toggle("flex");
-    bigHeader();
     let buttons = document.getElementsByClassName("btn");
     for (let button of buttons) {
         button.addEventListener("click", function () {
@@ -8,21 +7,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("seconds").innerHTML = 10;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-easy");
                 messageBoxStart();
-                smallHeader();
+                toggleHeader();
                 easyStyle();
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "medium") {
                 document.getElementById("seconds").innerHTML = 6;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-medium");
                 messageBoxStart();
-                smallHeader();
+                toggleHeader();
                 mediumStyle();
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
                 messageBoxStart();
-                smallHeader();
+                toggleHeader();
                 hardStyle();
                 toggleGame();
             } else if (this.getAttribute("game-difficulty") === "start-easy") {
@@ -41,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetGame();
                 hideQuestion();
                 toggleGame();
-                bigHeader();
+                document.getElementsByTagName("header")[0].style.background = "none";
+                toggleHeader();
                 document.getElementById("change").classList.toggle("display-hide");
                 document.getElementById("correct-increment").innerHTML = 0;
                 document.getElementById("wrong-increment").innerHTML = 0;
@@ -69,50 +69,34 @@ function toggleGame() {
     document.getElementById("outer-game-box").classList.toggle("flex");
 }
 
-function bigHeader() {
-    let title = document.getElementById("title");
-    let outerHeader = document.getElementsByTagName("header")[0];
-    outerHeader.style.borderBottom = "none";
-    outerHeader.style.background = "none";
-    title.style.fontSize = "80px";
-    title.style.color = "black";
-    title.style.marginTop = "5rem";
-    title.style.backgroundColor = "white";
-    title.style.border = "10px solid black";
-    title.style.borderRadius = "20px";
-    title.style.padding = "1rem";
-}
-
-function smallHeader() {
-    let title = document.getElementById("title");
-    let outerHeader = document.getElementsByTagName("header")[0];
-    outerHeader.style.borderBottom = "7px solid black";
-    outerHeader.style.backgroundColor = "white";
-    title.style.fontSize = "40px";
-    title.style.color = "black";
-    title.style.marginTop = "0";
-    title.style.background = "none";
-    title.style.border = "none";
-    title.style.padding = "0.5rem";
+function toggleHeader() {
+    document.getElementById("header-div-1").classList.toggle("big-header-div");
+    document.getElementById("header-div-1").classList.toggle("small-header-div");
+    document.getElementById("header-div-2").classList.toggle("big-header-div");
+    document.getElementById("header-div-2").classList.toggle("small-header-div");
+    document.getElementById("title").classList.toggle("big-header-title");
+    document.getElementById("title").classList.toggle("small-header-title");
+    document.getElementsByTagName("header")[0].classList.toggle("big-header");
+    document.getElementsByTagName("header")[0].classList.toggle("small-header");
 }
 
 function easyStyle() {
     document.getElementById("change").classList.toggle("display-hide");
-    document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(182, 201, 75)";
+    document.getElementsByClassName("small-header")[0].style.backgroundColor = "rgb(182, 201, 75)";
     document.getElementById("answer-1").style.backgroundColor = "rgb(182, 201, 75)";
     document.getElementById("timer").style.backgroundColor = "rgb(182, 201, 75)";
 }
 
 function mediumStyle() {
     document.getElementById("change").classList.toggle("display-hide");
-    document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(255, 219, 88)";
+    document.getElementsByClassName("small-header")[0].style.backgroundColor = "rgb(255, 219, 88)";
     document.getElementById("answer-1").style.backgroundColor = "rgb(255, 219, 88)";
     document.getElementById("timer").style.backgroundColor = "rgb(255, 219, 88)";
 }
 
 function hardStyle() {
     document.getElementById("change").classList.toggle("display-hide");
-    document.getElementsByTagName("header")[0].style.backgroundColor = "rgb(221, 53, 34)";
+    document.getElementsByClassName("small-header")[0].style.backgroundColor = "rgb(221, 53, 34)";
     document.getElementById("answer-1").style.backgroundColor = "rgb(221, 53, 34)";
     document.getElementById("timer").style.backgroundColor = "rgb(221, 53, 34)";
 }
