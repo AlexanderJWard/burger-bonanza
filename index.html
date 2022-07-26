@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +7,10 @@
 
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <link rel="stylesheet" href="assets/css/style.css">
-
     <title>Burger Bonanza</title>
 </head>
-
 <body>
+    <!-- header, title and change difficulty button -->
     <header class="big-header">
         <div class="big-header-div" id="header-div-1"></div>
         <div id="outer-title">
@@ -22,19 +20,25 @@
                 Difficulty</button>
         </div>
     </header>
+    <!-- noscript message when JavaScript is not detected -->
     <noscript>JavaScript is required to use this page.</noscript>
+    <!-- rotate screen message using media queries on screen sizes 635px in height -->
     <div class="display-hide" id="rotate">
         <h2>Burger Bonanza</h2>
         <p>Please rotate your device!</p>
     </div>
+    <!-- difficulty selection, visible on page load and when change difficulty button pressed -->
     <div class="display-hide" id="difficulty">
         <button class="btn btn-difficulty" id="easy" game-difficulty="easy">EASY</button>
         <button class="btn btn-difficulty" id="medium" game-difficulty="medium">MEDIUM</button>
         <button class="btn btn-difficulty" id="hard" game-difficulty="hard">HARD</button>
     </div>
+    <!-- game window, not visible on page load until difficulty selected -->
     <div class="display-hide" id="outer-game-box">
         <div id="game-box">
+            <!-- checkbox, question and answer -->
             <div id="question-answer-box">
+                <!-- checkbox -->
                 <div class="hide flex" id="outer-checkbox">
                     <div class="checkbox" id="checkbox-1">
                         <div class="check display-hide"><i class="fa-solid fa-circle-check"></i></div>
@@ -53,7 +57,9 @@
                         <div class="cross display-hide"><i class="fa-solid fa-circle-xmark"></i></div>
                     </div>
                 </div>
+                <!-- question sub title, visible using media queries on screen sizes 600px and lower in width-->
                 <div id="question-title" class="display-hide sub-title"><h2>Customer Order</h2></div>
+                <!-- question -->
                 <div id="outer-question">
                     <div class="question-box" id="question-top"><img src="assets/images/burgerTop.png"></div>
                     <div class="question-box" id="question-1" question=""><img src="assets/images/question.png">
@@ -66,18 +72,24 @@
                     </div>
                     <div class="question-box" id="question-bottom"><img src="assets/images/burgerBottom.png"></div>
                 </div>
+                <!-- start button, reset button and timer -->
                 <div id="outer-timer-buttons">
+                    <!-- start button -->
                     <div class="btn-circle btn-border" id="outer-start-game">
                         <button class="btn btn-circle" id="start-game" game-difficulty="">START</button>
                     </div>
+                    <!-- timer -->
                     <div id="timer">
                         <p id="seconds">0</p>
                     </div>
+                    <!-- reset button -->
                     <div class="btn-circle btn-border hide" id="outer-reset-game">
                         <button class="btn btn-circle" id="reset-game" button-type="reset">RESET</button>
                     </div>
                 </div>
+                <!-- answer sub title, visible using media queries on screen sizes 600px and lower in width-->
                 <div id="answer-title" class="display-hide sub-title"><h2>Your Answer</h2></div>
+                <!-- answer -->
                 <div id="outer-answer">
                     <div class="answer-box" id="answer-top"><img src="assets/images/burgerTop.png"></div>
                     <div class="answer-box" id="answer-1" answer=""></div>
@@ -87,11 +99,15 @@
                     <div class="answer-box" id="answer-bottom"><img src="assets/images/burgerBottom.png"></div>
                 </div>
             </div>
+            <!-- scoreboard, submit button, message box and selection box -->
             <div class="" id="outer-score-submit-selection">
+                <!-- scoreboard and submit button -->
                 <div id="outer-score-submit">
+                    <!-- submit button -->
                     <div class="btn-circle btn-border hide" id="outer-submit">
                         <button class="btn btn-circle" id="submit" button-type="submit">SUBMIT</button>
                     </div>
+                    <!-- scoreboard -->
                     <div id="outer-score">
                         <div class="score-box" id="correct">
                             <p>Correct: <span id="correct-increment">0</span></p>
@@ -102,8 +118,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- message box and selection box -->
                 <div id="outer-selection-info">
+                    <!-- sub title for selection box, visible when selection box is visible -->
                     <div class="display-hide" id="selection-title"><h2>ENTER your answer!</h2></div>
+                    <!-- selection box, not visible on game load -->
                     <div class="display-hide" id="selection">
                         <div class="selection-box" id="selection-1"><input class="btn selection-btn" type="image"
                                 src="assets/images/burgerMeat.png" button-number="1"></div>
@@ -114,11 +133,13 @@
                         <div class="selection-box" id="selection-4"><input class="btn selection-btn" type="image"
                                 src="assets/images/cheese.png" button-number="4"></div>
                     </div>
+                    <!-- message box, visible when game loads -->
                     <div class="display-hide flex" id="message-box"></div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- font awesome script and link to script.js page containing all website javascript -->
     <script src="https://kit.fontawesome.com/12183a849e.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>

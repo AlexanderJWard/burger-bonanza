@@ -312,6 +312,8 @@ header button {
     color: black;
 }
 
+/* answer style */
+
 #outer-answer {
     display: flex;
     align-items: center;
@@ -335,6 +337,8 @@ header button {
     height: inherit;
 }
 
+/* scoreboard, submit button, message box and selection box */
+
 #outer-score-submit-selection {
     display: flex;
     gap: 3rem;
@@ -343,11 +347,15 @@ header button {
     margin-bottom: 2rem;
 }
 
+/* scoreboard and submit button */
+
 #outer-score-submit {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+/* scoreboard */
 
 #outer-score {
     display: flex;
@@ -379,6 +387,8 @@ header button {
     padding: 0.5rem;
 }
 
+/* submit button */
+
 #outer-submit {
     margin-top: 2.5rem;
 }
@@ -387,6 +397,8 @@ header button {
     color: black;
     font-size: 30px;
 }
+
+/* selection box style */
 
 #outer-selection-info {
     display: flex;
@@ -434,12 +446,12 @@ header button {
     height: inherit;
 }
 
+/* message box style */
+
 #message-box {
     flex-direction: column;
     background-color: white;
     border-radius: 8px;
-    /* width: 26rem;
-    height: 18rem; */
 }
 
 #message-box p {
@@ -450,24 +462,14 @@ header button {
     padding: 0.5rem;
 }
 
+/* rotate device message media query for screen size lower than 635px in height */
+
 @media only screen and (max-height: 653px) {
     body {
         justify-content: center;
     }
     
-    #game-box {
-        display: none;
-    }
-
-    #difficulty {
-        display: none;
-    }
-
-    #outer-title {
-        display: none;
-    }
-
-    header {
+    #game-box, #difficulty, #outer-title, header {
         display: none;
     }
 
@@ -496,6 +498,7 @@ header button {
     }
 }
 
+/* media query for screen size 1100px and lower in width */
 
 @media only screen and (max-width: 1100px) {
     #outer-score-submit {
@@ -507,6 +510,8 @@ header button {
         order: 1;
     }
 }
+
+/* media query for screen size 600px and lower in width */
 
 @media only screen and (max-width: 600px) { 
     #game-box {
@@ -583,6 +588,8 @@ header button {
     }
 }
 
+/* media query for screen size 475px and lower in width */
+
 @media only screen and (max-width: 475px) {
     .big-header-title {
         font-size: 60px;
@@ -615,6 +622,8 @@ header button {
         width: 8rem;
     }
 }
+
+/* media query for screen size 320px and lower in width */
 
 @media only screen and (max-width: 320px) {
     #outer-question {
