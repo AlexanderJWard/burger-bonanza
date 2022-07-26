@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("answer-2").style.backgroundColor = "white";
                 document.getElementById("answer-3").style.backgroundColor = "white";
                 document.getElementById("answer-4").style.backgroundColor = "white";
-                document.getElementById("outer-submit").classList.toggle("hide");
-                document.getElementById("outer-reset-game").classList.toggle("hide");
-                document.getElementById("outer-start-game").classList.toggle("hide");
+                startButtonFade();
+                resetButtonFade();
+                submitButtonFade();
             }
         })
     }
@@ -381,6 +381,33 @@ function messageBoxStart() {
     document.getElementById("message-box").innerHTML = `<p>Press START to play the game!</p><p>You have ${document.getElementById("seconds").innerHTML} seconds to remember the customers order!</p>`;
 }
 
+function startButtonFade() {
+    document.getElementById("outer-start-game").classList.toggle("btn-circle");
+    document.getElementById("outer-start-game").classList.toggle("btn-circle-fade");
+    document.getElementById("start-game").classList.toggle("btn-disable")
+    document.getElementById("start-game").classList.toggle("btn-enable");
+    document.getElementById("start-game").classList.toggle("btn-text")
+    document.getElementById("start-game").classList.toggle("btn-text-fade");
+}
+
+function resetButtonFade() {
+    document.getElementById("outer-reset-game").classList.toggle("btn-circle");
+    document.getElementById("outer-reset-game").classList.toggle("btn-circle-fade");
+    document.getElementById("reset-game").classList.toggle("btn-disable")
+    document.getElementById("reset-game").classList.toggle("btn-enable");
+    document.getElementById("reset-game").classList.toggle("btn-text")
+    document.getElementById("reset-game").classList.toggle("btn-text-fade");
+}
+
+function submitButtonFade() {
+    document.getElementById("outer-submit").classList.toggle("btn-circle");
+    document.getElementById("outer-submit").classList.toggle("btn-circle-fade");
+    document.getElementById("submit").classList.toggle("btn-disable")
+    document.getElementById("submit").classList.toggle("btn-enable");
+    document.getElementById("submit").classList.toggle("btn-text")
+    document.getElementById("submit").classList.toggle("btn-text-fade");
+}
+
 let nowTime;
 
 /**
@@ -396,8 +423,8 @@ let nowTime;
  function startTimerEasy() {
     let time = 10;
     document.getElementById("seconds").innerHTML = time;
-    document.getElementById("outer-start-game").classList.toggle("hide");
-    document.getElementById("outer-reset-game").classList.toggle("hide");
+    startButtonFade();
+    resetButtonFade();
     function timer() {
         time--;
         document.getElementById("seconds").innerHTML = time;
@@ -405,7 +432,7 @@ let nowTime;
             nowTime = setTimeout(timer, 1000);
         } else {
             toggleSelection();
-            document.getElementById("outer-submit").classList.toggle("hide");
+            submitButtonFade();
             hideQuestion();
         }
     }
@@ -425,8 +452,8 @@ let nowTime;
 function startTimerMedium() {
     let time = 6;
     document.getElementById("seconds").innerHTML = time;
-    document.getElementById("outer-start-game").classList.toggle("hide");
-    document.getElementById("outer-reset-game").classList.toggle("hide");
+    startButtonFade();
+    resetButtonFade();
     function timer() {
         time--;
         document.getElementById("seconds").innerHTML = time;
@@ -434,7 +461,7 @@ function startTimerMedium() {
             nowTime = setTimeout(timer, 1000);
         } else {
             toggleSelection();
-            document.getElementById("outer-submit").classList.toggle("hide");
+            submitButtonFade();
             hideQuestion();
         }
     }
@@ -454,8 +481,8 @@ function startTimerMedium() {
  function startTimerHard() {
     let time = 3;
     document.getElementById("seconds").innerHTML = time;
-    document.getElementById("outer-reset-game").classList.toggle("hide");
-    document.getElementById("outer-start-game").classList.toggle("hide");
+    startButtonFade();
+    resetButtonFade();
     function timer() {
         time--;
         document.getElementById("seconds").innerHTML = time;
@@ -463,7 +490,7 @@ function startTimerMedium() {
             nowTime = setTimeout(timer, 1000);
         } else {
             toggleSelection();
-            document.getElementById("outer-submit").classList.toggle("hide");
+            submitButtonFade();
             hideQuestion();
         }
     }
@@ -504,9 +531,27 @@ function startTimerMedium() {
         document.getElementById("seconds").innerHTML = 3;
         answer1.style.backgroundColor = "rgb(221, 53, 34)";
     } 
-    document.getElementById("outer-start-game").classList.remove("hide");
-    document.getElementById("outer-reset-game").classList.add("hide");
-    document.getElementById("outer-submit").classList.add("hide");
+    document.getElementById("outer-start-game").classList.add("btn-circle");
+    document.getElementById("outer-start-game").classList.remove("btn-circle-fade");
+    document.getElementById("start-game").classList.remove("btn-disable")
+    document.getElementById("start-game").classList.add("btn-enable");
+    document.getElementById("start-game").classList.add("btn-text")
+    document.getElementById("start-game").classList.remove("btn-text-fade");
+
+    document.getElementById("outer-reset-game").classList.remove("btn-circle");
+    document.getElementById("outer-reset-game").classList.add("btn-circle-fade");
+    document.getElementById("reset-game").classList.add("btn-disable")
+    document.getElementById("reset-game").classList.remove("btn-enable");
+    document.getElementById("reset-game").classList.remove("btn-text")
+    document.getElementById("reset-game").classList.add("btn-text-fade");
+
+    document.getElementById("outer-submit").classList.remove("btn-circle");
+    document.getElementById("outer-submit").classList.add("btn-circle-fade");
+    document.getElementById("submit").classList.add("btn-disable")
+    document.getElementById("submit").classList.remove("btn-enable");
+    document.getElementById("submit").classList.remove("btn-text")
+    document.getElementById("submit").classList.add("btn-text-fade");
+
     messageBoxStart();
     document.getElementById("message-box").classList.add("flex");
     document.getElementById("selection-title").classList.remove("flex");
