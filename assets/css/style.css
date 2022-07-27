@@ -139,7 +139,7 @@ header button {
     color: black;
 }
 
-#easy:hover {
+#easy:hover, .easy-animation:hover {
     animation-name: fill-easy;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -150,7 +150,7 @@ header button {
     color: black;
 }
 
-#medium:hover {
+#medium:hover, .medium-animation:hover {
     animation-name: fill-medium;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -161,7 +161,7 @@ header button {
     color: black;
 }
 
-#hard:hover {
+#hard:hover, .hard-animation:hover {
     animation-name: fill-hard;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -189,7 +189,7 @@ header button {
 #outer-game-box {
     flex-wrap: wrap;
     justify-content: center;
-    width: inherit;
+    width: 100%;
 }
 
 #game-box {
@@ -482,9 +482,9 @@ header button {
     padding: 0.5rem;
 }
 
-/* rotate device message media query for screen size lower than 635px in height */
+/* rotate device message media query for screen size lower than 650px in height */
 
-@media only screen and (max-height: 653px) {
+@media only screen and (max-height: 650px) {
     body {
         justify-content: center;
     }
