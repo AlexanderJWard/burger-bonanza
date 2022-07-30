@@ -64,6 +64,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("answer-2").style.backgroundColor = "white";
                 document.getElementById("answer-3").style.backgroundColor = "white";
                 document.getElementById("answer-4").style.backgroundColor = "white";
+                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                    document.getElementById("outer-start-game").classList.toggle("easy-animation");
+                    document.getElementById("outer-reset-game").classList.toggle("easy-animation");
+                    document.getElementById("outer-submit").classList.toggle("easy-animation");
+                } else if(document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                    document.getElementById("outer-start-game").classList.toggle("medium-animation");
+                    document.getElementById("outer-reset-game").classList.toggle("medium-animation");
+                    document.getElementById("outer-submit").classList.toggle("medium-animation");
+                } else if(document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                    document.getElementById("outer-start-game").classList.toggle("hard-animation");
+                    document.getElementById("outer-reset-game").classList.toggle("hard-animation");
+                    document.getElementById("outer-submit").classList.toggle("hard-animation");
+                }
                 startButtonFade();
                 resetButtonFade();
                 submitButtonFade();
