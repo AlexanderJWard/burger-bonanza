@@ -73,10 +73,19 @@ document.addEventListener("DOMContentLoaded", function () {
     displayAnswer();
 })
 
+/**
+ * toggleGame toggles the flex class on both the difficulty div and the outer-game-box which means
+ * only one will be visible at one time.
+ */
+
 function toggleGame() {
     document.getElementById("difficulty").classList.toggle("flex");
     document.getElementById("outer-game-box").classList.toggle("flex");
 }
+
+/**
+ * toggleHeader toggles either the big header or small header class on the header, sub divs and title.
+ */
 
 function toggleHeader() {
     document.getElementById("header-div-1").classList.toggle("big-header-div");
@@ -89,6 +98,11 @@ function toggleHeader() {
     document.getElementsByTagName("header")[0].classList.toggle("small-header");
 }
 
+/**
+ * easyStyle changes the style of the header, answer background color, timer background color and toggles the
+ * start button animation on loading easy difficulty.
+ */
+
 function easyStyle() {
     document.getElementById("change").classList.toggle("display-hide");
     document.getElementsByClassName("small-header")[0].style.backgroundColor = "rgb(182, 201, 75)";
@@ -97,6 +111,11 @@ function easyStyle() {
     document.getElementById("outer-start-game").classList.toggle("easy-animation");
 }
 
+/**
+ * mediumStyle changes the style of the header, answer background color, timer background color and toggles the
+ * start button animation on loading medium difficulty.
+ */
+
 function mediumStyle() {
     document.getElementById("change").classList.toggle("display-hide");
     document.getElementsByClassName("small-header")[0].style.backgroundColor = "rgb(255, 219, 88)";
@@ -104,6 +123,11 @@ function mediumStyle() {
     document.getElementById("timer").style.backgroundColor = "rgb(255, 219, 88)";
     document.getElementById("outer-start-game").classList.toggle("medium-animation");
 }
+
+/**
+ * hardStyle changes the style of the header, answer background color, timer background color and toggles the
+ * start button animation on loading hard difficulty.
+ */
 
 function hardStyle() {
     document.getElementById("change").classList.toggle("display-hide");
@@ -186,6 +210,21 @@ function hideQuestion() {
     document.getElementById("question-3").innerHTML = '<img src="assets/images/question.png">';
     document.getElementById("question-4").innerHTML = '<img src="assets/images/question.png">';
 }
+
+/**
+ * displayAnswer will listen for each button click with a class of btn and push whatever button-number
+ * that button has into a numbers array. If the game-difficulty attribute is detected it clears the number
+ * array back to empty. This is also done if the button type is reset, submit or change-difficulty.
+ * 
+ * A new array is created called answer and this will cycle through each number in the numbers array and
+ * based on what number is returned the relevant image html will be pushed to the new answer array. For example
+ * 1 = burger image or 2 = salad image etc.
+ * 
+ * Based off the length of the current number array this will determine the answer attribute on each answer box html
+ * and also set the inner html to that related image html from the answer array. The correct color answer background is
+ * then set based off difficulty and the current length of the number array. Finally, if the number array is 4 long then
+ * this will reset the numbers array back to a blank array once completing the above task.
+ */
 
 function displayAnswer() {
     let buttons = document.getElementsByClassName("btn");
@@ -393,6 +432,10 @@ function messageBoxStart() {
     document.getElementById("message-box").innerHTML = `<p>Press START to play the game!</p><p>You have ${document.getElementById("seconds").innerHTML} seconds to remember the customers order!</p>`;
 }
 
+/**
+ * startButtonFade will toggle the start button transparant background and toggle if the button is clickable.
+ */
+
 function startButtonFade() {
     document.getElementById("outer-start-game").classList.toggle("btn-circle");
     document.getElementById("outer-start-game").classList.toggle("btn-circle-fade");
@@ -402,6 +445,10 @@ function startButtonFade() {
     document.getElementById("start-game").classList.toggle("btn-text-fade");
 }
 
+/**
+ * resetButtonFade will toggle the reset button transparant background and toggle if the button is clickable.
+ */
+
 function resetButtonFade() {
     document.getElementById("outer-reset-game").classList.toggle("btn-circle");
     document.getElementById("outer-reset-game").classList.toggle("btn-circle-fade");
@@ -410,6 +457,10 @@ function resetButtonFade() {
     document.getElementById("reset-game").classList.toggle("btn-text")
     document.getElementById("reset-game").classList.toggle("btn-text-fade");
 }
+
+/**
+ * submitButtonFade will toggle the submit button transparant background and toggle if the button is clickable.
+ */
 
 function submitButtonFade() {
     document.getElementById("outer-submit").classList.toggle("btn-circle");
