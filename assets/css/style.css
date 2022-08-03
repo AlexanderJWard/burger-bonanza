@@ -482,9 +482,9 @@ header button {
     padding: 0.5rem;
 }
 
-/* rotate device message media query for screen size lower than 640px in height */
+/* rotate device message media query for screen size lower than 600px in height */
 
-@media only screen and (max-height: 635px) {
+@media only screen and (max-height: 600px) {
     body {
         justify-content: center;
     }
