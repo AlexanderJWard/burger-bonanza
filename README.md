@@ -8,7 +8,7 @@ Alexander Ward
 
 Burger Bonanza is a javascript memory game based around remembering a customers burger order for a set amount of time based on difficulty. The order then dissapears and the player has to replicate the customers order in the selection window. After pressing submit the game will then inform the player if they are correct or wrong and tally the score, there are also cross or check marks against each selection so the player know exactly which part of their answer was correct or wrong. Burger Bonanza can be enjoyed by people of all ages however due to it fairly simple mechanics and forgiving difficulties it's more aimed towards children.
 
-![image](https://user-images.githubusercontent.com/102811792/181935203-7947b7d8-b5d3-48aa-9f8d-de532ab39923.png)
+![image](https://user-images.githubusercontent.com/102811792/182658590-e7adcd18-e619-4333-9bf9-b86e04fc14d9.png)
 
 ## Table of Contents
 
@@ -140,6 +140,8 @@ Wireframe created in Balsamiq and exported as PDF:
 
 ### Media
 
+Background music from PlayOnLoop.com
+Licensed under Creative Commons by Attribution 4.0
 
 ### Acknowledgments
 
