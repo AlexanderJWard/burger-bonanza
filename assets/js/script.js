@@ -87,6 +87,34 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 /**
+* Music file setup
+*/
+
+let backgroundTrack = document.getElementById('backgroundTrack');
+backgroundTrack.volume = 0.3;
+backgroundTrack.loop = true;
+let soundOn = false;
+
+/**
+* musicControl pauses or unpauses the backgroundTrack and toggles the display icon to show
+* either a mute or play symbol.
+*/
+
+function musicControl() {
+   soundOn = !soundOn;
+   if (soundOn) {
+       backgroundTrack.play();
+       document.getElementById("music-on").classList.toggle('display-hide');
+       document.getElementById("music-off").classList.toggle('display-hide');
+   } else {
+       backgroundTrack.pause();
+       document.getElementById("music-off").classList.toggle('display-hide');
+       document.getElementById("music-on").classList.toggle('display-hide');
+   }
+}
+
+
+/**
  * toggleGame toggles the flex class on both the difficulty div and the outer-game-box which means
  * only one will be visible at one time.
  */
