@@ -28,14 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetGame();
                 displayQuestion();
                 startTimerEasy();
+                document.getElementById("outer-question").scrollIntoView();
             } else if (this.getAttribute("game-difficulty") === "start-medium") {
                 resetGame();
                 displayQuestion();
                 startTimerMedium();
+                document.getElementById("outer-question").scrollIntoView();
             } else if (this.getAttribute("game-difficulty") === "start-hard") {
                 resetGame();
                 displayQuestion();
                 startTimerHard();
+                document.getElementById("outer-question").scrollIntoView();
             } else if (this.getAttribute("button-type") === "change-difficulty") {
                 resetGame();
                 hideQuestion();
@@ -211,19 +214,19 @@ function displayQuestion() {
     for (let number of numbers) {
         if (number === 1) {
             question.push(`
-            <img src="assets/images/burgerMeat.png">
+            <img src="assets/images/burgerMeat.png" alt="Cartoon image of cooked burger meat with condiments">
             `);
         } else if (number === 2) {
             question.push(`
-            <img src="assets/images/salad.png">
+            <img src="assets/images/salad.png" alt="Cartoon image of salad">
             `);
         } else if (number === 3) {
             question.push(`
-            <img src="assets/images/baconEggs.png">
+            <img src="assets/images/baconEggs.png" alt="Cartoon image of bacon and eggs">
             `);
         } else {
             question.push(`
-            <img src="assets/images/cheese.png">
+            <img src="assets/images/cheese.png" alt="Cartoon image of sliced cheese">
             `);
         }
     }
@@ -246,10 +249,10 @@ function displayQuestion() {
  */
 
 function hideQuestion() {
-    document.getElementById("question-1").innerHTML = '<img src="assets/images/question.png">';
-    document.getElementById("question-2").innerHTML = '<img src="assets/images/question.png">';
-    document.getElementById("question-3").innerHTML = '<img src="assets/images/question.png">';
-    document.getElementById("question-4").innerHTML = '<img src="assets/images/question.png">';
+    document.getElementById("question-1").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
+    document.getElementById("question-2").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
+    document.getElementById("question-3").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
+    document.getElementById("question-4").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
 }
 
 /**
@@ -297,19 +300,19 @@ function displayAnswer() {
             for (let number of numbers) {
                 if (number === 1) {
                     answer.push(`
-            <img src="assets/images/burgerMeat.png">
+            <img src="assets/images/burgerMeat.png" alt="Cartoon image of cooked burger meat with condiments">
             `);
                 } else if (number === 2) {
                     answer.push(`
-            <img src="assets/images/salad.png">
+            <img src="assets/images/salad.png" alt="Cartoon image of salad">
             `);
                 } else if (number === 3) {
                     answer.push(`
-            <img src="assets/images/baconEggs.png">
+            <img src="assets/images/baconEggs.png" alt="Cartoon image of bacon and eggs">
             `);
                 } else if (number === 4) {
                     answer.push(`
-            <img src="assets/images/cheese.png">
+            <img src="assets/images/cheese.png" alt="Cartoon image of sliced cheese">
             `);
                 }
             }
@@ -393,29 +396,29 @@ function checkAnswer() {
     let answer = [answer1, answer2, answer3, answer4];
     let compare = question.toString() === answer.toString();
     if (compare) {
-        document.getElementById("message-box").innerHTML = `<p>CORRECT!</p>`;
+        document.getElementById("message-box").innerHTML = `<p>CORRECT!</p><p>Well done, your doing great!</p><p>Press START to play again!</p>`;
         incrementCorrect();
     } else {
-        document.getElementById("message-box").innerHTML = `<p>WRONG!</p>`;
+        document.getElementById("message-box").innerHTML = `<p>WRONG!</p><p>Better luck next time.</p><p>Press START to play again!</p>`;
         incrementWrong();
     };
     let numbers = [];
     for (let number of question) {
         if (number === "1") {
             numbers.push(`
-    <img src="assets/images/burgerMeat.png">
+    <img src="assets/images/burgerMeat.png" alt="Cartoon image of cooked burger meat with condiments">
     `);
         } else if (number === "2") {
             numbers.push(`
-    <img src="assets/images/salad.png">
+    <img src="assets/images/salad.png" alt="Cartoon image of salad">
     `);
         } else if (number === "3") {
             numbers.push(`
-    <img src="assets/images/baconEggs.png">
+    <img src="assets/images/baconEggs.png" alt="Cartoon image of bacon and eggs">
     `);
         } else if (number === "4") {
             numbers.push(`
-    <img src="assets/images/cheese.png">
+    <img src="assets/images/cheese.png" alt="Cartoon image of sliced cheese">
     `);
         }
     }

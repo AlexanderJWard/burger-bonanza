@@ -4,6 +4,10 @@
 
 /* generic */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     flex-wrap: wrap;
@@ -455,18 +459,16 @@ header button {
 }
 
 #selection-title {
-    width: 20rem;
     background-color: white;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 #selection-title h2 {
-    margin: 0.5rem;
-    text-align: center;
-    padding: 0;
+    padding: 0.5rem;
+    margin: auto;
     font-family: "Fredoka One", sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     color: black;
 }
 
@@ -591,7 +593,7 @@ header button {
     #question-answer-box {
         order: 2;
         padding-top: 1rem;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     #outer-score-submit-selection {
@@ -606,31 +608,15 @@ header button {
     }
 
     .checkbox {
-        margin: 1.1rem 0;
-    }
-
-    .sub-title {
-        display: flex;
-    }
-
-    #question-title {
-        order: 2;
-        margin: 0.5rem;
+        margin: 1rem 0;
     }
 
     #outer-question {
-        padding-right: 5rem;
         margin-bottom: 2rem;
         order: 4;
     }
 
-    #answer-title {
-        order: 5;
-        margin: 0.5rem;
-    }
-
     #outer-answer {
-        padding-right: 5rem;
         margin-bottom: 2rem;
         order: 6;
     }
@@ -671,6 +657,30 @@ header button {
         padding: 1rem;
     }
 
+    #outer-checkbox {
+        padding-top: 3.2rem;
+        position: relative;
+        width: 2px;
+    }
+
+    .checkbox {
+        width: 40px;
+        height: 40px;
+    }
+
+    .fa-circle-xmark {
+        font-size: 30px;
+    }
+
+    .fa-circle-check {
+        font-size: 30px;
+    }
+
+    .question-box, .answer-box {
+        height: 4rem;
+        width: 7rem;
+    }
+
     #outer-start-game {
         order: 1;
     }
@@ -696,17 +706,9 @@ header button {
 /* media query for screen size 320px and lower in width */
 
 @media only screen and (max-width: 320px) {
-    #outer-question {
-        padding-right: 0;
-    }
-    
-    #outer-answer {
-        padding-right: 0;
-    }
 
     #outer-timer-buttons {
-        gap: 0.5rem;
-        margin: 0;
+        gap: 1rem;
     }
 
     #outer-start-game {
