@@ -12,6 +12,39 @@ Burger Bonanza is a javascript memory game based around remembering a customers 
 
 ## Table of Contents
 
+- [Burger Bonanza](#burger-bonanza)
+  * [Author](#author)
+  * [Project Overview](#project-overview)
+  * [Table of Contents](#table-of-contents)
+  * [UX](#ux)
+    + [Project Goals](#project-goals)
+    + [Design Choices](#design-choices)
+      - [Colors](#colors)
+      - [Typography](#typography)
+      - [Images](#images)
+      - [Animations and Transitions](#animations-and-transitions)
+    + [Wireframes](#wireframes)
+    + [Features](#features)
+      - [Implemented Features](#implemented-features)
+      - [Future Features](#future-features)
+  * [Testing](#testing)
+    + [Validation Testing](#validation-testing)
+    + [Cross Browser and Cross Device Testing](#cross-browser-and-cross-device-testing)
+    + [Manual Testing](#manual-testing)
+      - [Desktop](#desktop)
+      - [All screen sizes](#all-screen-sizes)
+    + [Defect Tracking](#defect-tracking)
+    + [Defects of Note](#defects-of-note)
+  * [Accessibility](#accessibility)
+    + [Lighthouse Audits](#lighthouse-audits)
+    + [Keyboard Navigation](#keyboard-navigation)
+  * [Deployment](#deployment)
+  * [Credits](#credits)
+    + [Content](#content)
+    + [Media](#media)
+    + [Acknowledgments](#acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## UX
 
@@ -69,11 +102,11 @@ Hover effect on start, reset and submit buttons based on difficulty and as long 
 
 ![image](https://user-images.githubusercontent.com/102811792/181936574-b7cb6bdd-0a8a-46d5-ae3a-da1f79bc867c.png)
 
-Scroll into view animation when the user selects a difficulty that scrolls to the top of the page so the game doesn't load in the middle forcing the user to manually scroll up.
+- Scroll into view animation when the user selects a difficulty that scrolls to the top of the page so the game doesn't load in the middle forcing the user to manually scroll up.
 
-Scroll into view animation when the user clicks the start button the scrolls to the question. Useful on small screen sizes where the start button and question are visible together.
+- Scroll into view animation when the user clicks the start button the scrolls to the question. Useful on small screen sizes where the start button and question are visible together.
 
-Scroll into view when timer hits 0 that scrolls to the selection box. Useful on small screen sizes where the selection box is out of view from the timer, this way the user can easily see what they have to do after the timer ends.
+- Scroll into view when timer hits 0 that scrolls to the selection box. Useful on small screen sizes where the selection box is out of view from the timer, this way the user can easily see what they have to do after the timer ends.
 
 ### Wireframes
 
