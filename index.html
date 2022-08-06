@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Burger Bonanza is a fun memory game themed around remembering customers burger orders aimed at people of all ages.">
+    <meta name="description"
+        content="Burger Bonanza is a fun memory game themed around remembering customers burger orders aimed at people of all ages.">
     <meta name="keywords" content="burger memory game easy medium hard all ages background music">
     <meta name="author" content="Alexander Ward">
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
@@ -17,23 +18,25 @@
     <!-- header, title and change difficulty button -->
     <header class="big-header">
         <div class="big-header-div" id="header-div-1">
-            <!-- pause or unpause background music -->
+            <!-- icon for pause or unpause background music -->
             <div id="music-on">
-                <a class="audio" onClick="musicControl();">
-                    <i class="fas fa-volume-mute" aria-label="Turn on background music"></i>
+                <a class="audio" onClick="musicControl();" aria-label="Turn on background music">
+                    <i class="fas fa-volume-mute"></i>
                 </a>
             </div>
             <div class="display-hide" id="music-off">
-                <a class="audio" onClick="musicControl();">
-                    <i class="fas fa-volume-up" aria-label="Turn off background music"></i>
+                <a class="audio" onClick="musicControl();" aria-label="Turn off background music">
+                    <i class="fas fa-volume-up"></i>
                 </a>
             </div>
         </div>
+        <!-- h1 title -->
         <div id="outer-title">
             <h1 class="big-header-title" id="title">Burger Bonanza</h1>
         </div>
+        <!-- change difficulty button -->
         <div class="big-header-div" id="header-div-2">
-            <button class="btn display-hide" id="change" button-type="change-difficulty">Change
+            <button class="btn display-hide" id="change" data-button-type="change-difficulty">Change
                 Difficulty</button>
         </div>
     </header>
@@ -46,9 +49,9 @@
     </div>
     <!-- difficulty selection, visible on page load and when change difficulty button pressed -->
     <div class="display-hide" id="difficulty">
-        <button class="btn btn-difficulty" id="easy" game-difficulty="easy">EASY</button>
-        <button class="btn btn-difficulty" id="medium" game-difficulty="medium">MEDIUM</button>
-        <button class="btn btn-difficulty" id="hard" game-difficulty="hard">HARD</button>
+        <button class="btn btn-difficulty" id="easy" data-game-difficulty="easy">EASY</button>
+        <button class="btn btn-difficulty" id="medium" data-game-difficulty="medium">MEDIUM</button>
+        <button class="btn btn-difficulty" id="hard" data-game-difficulty="hard">HARD</button>
     </div>
     <!-- game window, not visible on page load until difficulty selected -->
     <div class="display-hide" id="outer-game-box">
@@ -76,23 +79,23 @@
                 </div>
                 <!-- question -->
                 <div id="outer-question">
-                    <div class="question-box" id="question-top"><img src="assets/images/burgerTop.png"></div>
-                    <div class="question-box" id="question-1" question=""><img src="assets/images/question.png">
+                    <div class="question-box" id="question-top"><img src="assets/images/burgerTop.png" alt="Cartoon image of burger bun top"></div>
+                    <div class="question-box" id="question-1" data-question=""><img src="assets/images/question.png" alt="Image of multiple question marks">
                     </div>
-                    <div class="question-box" id="question-2" question=""><img src="assets/images/question.png">
+                    <div class="question-box" id="question-2" data-question=""><img src="assets/images/question.png" alt="Image of multiple question marks">
                     </div>
-                    <div class="question-box" id="question-3" question=""><img src="assets/images/question.png">
+                    <div class="question-box" id="question-3" data-question=""><img src="assets/images/question.png" alt="Image of multiple question marks">
                     </div>
-                    <div class="question-box" id="question-4" question=""><img src="assets/images/question.png">
+                    <div class="question-box" id="question-4" data-question=""><img src="assets/images/question.png" alt="Image of multiple question marks">
                     </div>
-                    <div class="question-box" id="question-bottom"><img src="assets/images/burgerBottom.png"></div>
+                    <div class="question-box" id="question-bottom"><img src="assets/images/burgerBottom.png" alt="Cartoon image of burger bun bottom"></div>
                 </div>
                 <!-- start button, reset button and timer -->
                 <div id="outer-timer-buttons">
                     <!-- start button -->
                     <div class="btn-size btn-circle" id="outer-start-game">
                         <button class="btn btn-size btn-text btn-enable" id="start-game"
-                            game-difficulty="">START</button>
+                            data-game-difficulty="">START</button>
                     </div>
                     <!-- timer -->
                     <div id="timer">
@@ -101,17 +104,17 @@
                     <!-- reset button -->
                     <div class="btn-size btn-circle-fade" id="outer-reset-game">
                         <button class="btn btn-size btn-text-fade btn-disable" id="reset-game"
-                            button-type="reset">RESET</button>
+                            data-button-type="reset">RESET</button>
                     </div>
                 </div>
                 <!-- answer -->
                 <div id="outer-answer">
-                    <div class="answer-box" id="answer-top"><img src="assets/images/burgerTop.png"></div>
-                    <div class="answer-box" id="answer-1" answer=""></div>
-                    <div class="answer-box" id="answer-2" answer=""></div>
-                    <div class="answer-box" id="answer-3" answer=""></div>
-                    <div class="answer-box" id="answer-4" answer=""></div>
-                    <div class="answer-box" id="answer-bottom"><img src="assets/images/burgerBottom.png"></div>
+                    <div class="answer-box" id="answer-top"><img src="assets/images/burgerTop.png" alt="Cartoon image of burger bun top"></div>
+                    <div class="answer-box" id="answer-1" data-answer=""></div>
+                    <div class="answer-box" id="answer-2" data-answer=""></div>
+                    <div class="answer-box" id="answer-3" data-answer=""></div>
+                    <div class="answer-box" id="answer-4" data-answer=""></div>
+                    <div class="answer-box" id="answer-bottom"><img src="assets/images/burgerBottom.png" alt="Cartoon image of burger bun bottom"></div>
                 </div>
             </div>
             <!-- scoreboard, submit button, message box and selection box -->
@@ -121,7 +124,7 @@
                     <!-- submit button -->
                     <div class="btn-size btn-circle-fade" id="outer-submit">
                         <button class="btn btn-size btn-text-fade btn-disable" id="submit"
-                            button-type="submit">SUBMIT</button>
+                            data-button-type="submit">SUBMIT</button>
                     </div>
                     <!-- scoreboard -->
                     <div id="outer-score">
@@ -143,13 +146,13 @@
                     <!-- selection box, not visible on game load -->
                     <div class="display-hide" id="selection">
                         <div class="selection-box" id="selection-1"><input class="btn selection-btn" type="image"
-                                src="assets/images/burgerMeat.png" button-number="1"></div>
+                                src="assets/images/burgerMeat.png" alt="Cartoon image of cooked burger meat with condiments" data-button-number="1"></div>
                         <div class="selection-box" id="selection-2"><input class="btn selection-btn" type="image"
-                                src="assets/images/salad.png" button-number="2"></div>
+                                src="assets/images/salad.png" alt="Cartoon image of salad" data-button-number="2"></div>
                         <div class="selection-box" id="selection-3"><input class="btn selection-btn" type="image"
-                                src="assets/images/baconEggs.png" button-number="3"></div>
+                                src="assets/images/baconEggs.png" alt="Cartoon image of bacon and eggs" data-button-number="3"></div>
                         <div class="selection-box" id="selection-4"><input class="btn selection-btn" type="image"
-                                src="assets/images/cheese.png" button-number="4"></div>
+                                src="assets/images/cheese.png" alt="Cartoon image of sliced cheese" data-button-number="4"></div>
                     </div>
                     <!-- message box, visible when game loads -->
                     <div class="display-hide flex" id="message-box"></div>
@@ -157,6 +160,7 @@
             </div>
         </div>
     </div>
+    <!-- link to .wav file for background music -->
     <audio id="backgroundTrack" src="assets/audio/backgroundTrack.wav"></audio>
     <!-- font awesome script and link to script.js page containing all website javascript -->
     <script src="https://kit.fontawesome.com/12183a849e.js" crossorigin="anonymous"></script>

@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-/* <a href="https://www.vecteezy.com/free-vector/burger-background">Burger Background Vectors by Vecteezy</a> */
-
 /* generic */
 
 html {
@@ -126,7 +124,7 @@ header button {
 
 /* Music Controller */
 
-.audio{
+.audio {
     height: 36px;
     width: 36px;
     border: none;
@@ -135,13 +133,14 @@ header button {
     display: flex;
     padding: 0.2rem;
     margin: 0.5rem;
- }
- .audio i{
+}
+
+.audio i {
     font-size: 25px;
     margin: auto;
- 
- }
- 
+
+}
+
 
 /* difficulty selection */
 
@@ -170,7 +169,8 @@ header button {
     color: black;
 }
 
-#easy:hover, .easy-animation:hover {
+#easy:hover,
+.easy-animation:hover {
     animation-name: fill-easy;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -181,7 +181,8 @@ header button {
     color: black;
 }
 
-#medium:hover, .medium-animation:hover {
+#medium:hover,
+.medium-animation:hover {
     animation-name: fill-medium;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -192,7 +193,8 @@ header button {
     color: black;
 }
 
-#hard:hover, .hard-animation:hover {
+#hard:hover,
+.hard-animation:hover {
     animation-name: fill-hard;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -201,18 +203,33 @@ header button {
 /* difficulty animations */
 
 @keyframes fill-easy {
-    from {background-color: white;}
-    to {background-color: rgb(182, 201, 75);}
+    from {
+        background-color: white;
+    }
+
+    to {
+        background-color: rgb(182, 201, 75);
+    }
 }
 
 @keyframes fill-medium {
-    from {background-color: white;}
-    to {background-color: rgb(255, 219, 88);}
+    from {
+        background-color: white;
+    }
+
+    to {
+        background-color: rgb(255, 219, 88);
+    }
 }
 
 @keyframes fill-hard {
-    from {background-color: white;}
-    to {background-color: rgb(221, 53, 34);}
+    from {
+        background-color: white;
+    }
+
+    to {
+        background-color: rgb(221, 53, 34);
+    }
 }
 
 /* main game window */
@@ -257,7 +274,8 @@ header button {
     height: 70px;
 }
 
-.check, .cross {
+.check,
+.cross {
     margin: auto;
 }
 
@@ -517,8 +535,11 @@ header button {
     body {
         justify-content: center;
     }
-    
-    #game-box, #difficulty, #outer-title, header {
+
+    #game-box,
+    #difficulty,
+    #outer-title,
+    header {
         display: none;
     }
 
@@ -585,7 +606,7 @@ header button {
         flex: 0;
         justify-content: flex-start;
     }
-    
+
     #game-box {
         gap: 0;
     }
@@ -676,7 +697,8 @@ header button {
         font-size: 30px;
     }
 
-    .question-box, .answer-box {
+    .question-box,
+    .answer-box {
         height: 4rem;
         width: 7rem;
     }
@@ -696,7 +718,7 @@ header button {
     #selection {
         width: 20rem;
     }
-    
+
     .selection-box {
         height: 6rem;
         width: 8rem;

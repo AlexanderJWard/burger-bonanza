@@ -3,46 +3,46 @@ document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByClassName("btn");
     for (let button of buttons) {
         button.addEventListener("click", function () {
-            if (this.getAttribute("game-difficulty") === "easy") {
+            if (this.getAttribute("data-game-difficulty") === "easy") {
                 document.getElementById("seconds").innerHTML = 10;
-                document.getElementById("start-game").setAttribute("game-difficulty", "start-easy");
+                document.getElementById("start-game").setAttribute("data-game-difficulty", "start-easy");
                 messageBoxStart();
                 toggleHeader();
                 easyStyle();
                 toggleGame();
                 document.getElementById("outer-title").scrollIntoView();
-            } else if (this.getAttribute("game-difficulty") === "medium") {
+            } else if (this.getAttribute("data-game-difficulty") === "medium") {
                 document.getElementById("seconds").innerHTML = 6;
-                document.getElementById("start-game").setAttribute("game-difficulty", "start-medium");
+                document.getElementById("start-game").setAttribute("data-game-difficulty", "start-medium");
                 messageBoxStart();
                 toggleHeader();
                 mediumStyle();
                 toggleGame();
                 document.getElementById("outer-title").scrollIntoView();
-            } else if (this.getAttribute("game-difficulty") === "hard") {
+            } else if (this.getAttribute("data-game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
-                document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
+                document.getElementById("start-game").setAttribute("data-game-difficulty", "start-hard");
                 messageBoxStart();
                 toggleHeader();
                 hardStyle();
                 toggleGame();
                 document.getElementById("outer-title").scrollIntoView();
-            } else if (this.getAttribute("game-difficulty") === "start-easy") {
+            } else if (this.getAttribute("data-game-difficulty") === "start-easy") {
                 resetGame();
                 displayQuestion();
                 startTimerEasy();
                 document.getElementById("outer-question").scrollIntoView();
-            } else if (this.getAttribute("game-difficulty") === "start-medium") {
+            } else if (this.getAttribute("data-game-difficulty") === "start-medium") {
                 resetGame();
                 displayQuestion();
                 startTimerMedium();
                 document.getElementById("outer-question").scrollIntoView();
-            } else if (this.getAttribute("game-difficulty") === "start-hard") {
+            } else if (this.getAttribute("data-game-difficulty") === "start-hard") {
                 resetGame();
                 displayQuestion();
                 startTimerHard();
                 document.getElementById("outer-question").scrollIntoView();
-            } else if (this.getAttribute("button-type") === "change-difficulty") {
+            } else if (this.getAttribute("data-button-type") === "change-difficulty") {
                 resetGame();
                 hideQuestion();
                 toggleGame();
@@ -60,25 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("outer-submit").classList.remove("hard-animation");
                 document.getElementById("correct-increment").innerHTML = 0;
                 document.getElementById("wrong-increment").innerHTML = 0;
-            } else if (this.getAttribute("button-type") === "reset") {
+            } else if (this.getAttribute("data-button-type") === "reset") {
                 resetGame();
                 hideQuestion();
-            } else if (this.getAttribute("button-type") === "submit") {
+            } else if (this.getAttribute("data-button-type") === "submit") {
                 checkAnswer();
                 toggleSelection();
                 document.getElementById("answer-1").style.backgroundColor = "white";
                 document.getElementById("answer-2").style.backgroundColor = "white";
                 document.getElementById("answer-3").style.backgroundColor = "white";
                 document.getElementById("answer-4").style.backgroundColor = "white";
-                if (document.getElementById("start-game").getAttribute("game-difficulty") === "start-easy") {
+                if (document.getElementById("start-game").getAttribute("data-game-difficulty") === "start-easy") {
                     document.getElementById("outer-start-game").classList.toggle("easy-animation");
                     document.getElementById("outer-reset-game").classList.toggle("easy-animation");
                     document.getElementById("outer-submit").classList.toggle("easy-animation");
-                } else if(document.getElementById("start-game").getAttribute("game-difficulty") === "start-medium") {
+                } else if (document.getElementById("start-game").getAttribute("data-game-difficulty") === "start-medium") {
                     document.getElementById("outer-start-game").classList.toggle("medium-animation");
                     document.getElementById("outer-reset-game").classList.toggle("medium-animation");
                     document.getElementById("outer-submit").classList.toggle("medium-animation");
-                } else if(document.getElementById("start-game").getAttribute("game-difficulty") === "start-hard") {
+                } else if (document.getElementById("start-game").getAttribute("data-game-difficulty") === "start-hard") {
                     document.getElementById("outer-start-game").classList.toggle("hard-animation");
                     document.getElementById("outer-reset-game").classList.toggle("hard-animation");
                     document.getElementById("outer-submit").classList.toggle("hard-animation");
@@ -107,16 +107,16 @@ let soundOn = false;
 */
 
 function musicControl() {
-   soundOn = !soundOn;
-   if (soundOn) {
-       backgroundTrack.play();
-       document.getElementById("music-on").classList.toggle('display-hide');
-       document.getElementById("music-off").classList.toggle('display-hide');
-   } else {
-       backgroundTrack.pause();
-       document.getElementById("music-off").classList.toggle('display-hide');
-       document.getElementById("music-on").classList.toggle('display-hide');
-   }
+    soundOn = !soundOn;
+    if (soundOn) {
+        backgroundTrack.play();
+        document.getElementById("music-on").classList.toggle('display-hide');
+        document.getElementById("music-off").classList.toggle('display-hide');
+    } else {
+        backgroundTrack.pause();
+        document.getElementById("music-off").classList.toggle('display-hide');
+        document.getElementById("music-on").classList.toggle('display-hide');
+    }
 }
 
 
@@ -238,13 +238,13 @@ function displayQuestion() {
     let question3 = document.getElementById("question-3");
     let question4 = document.getElementById("question-4");
     question1.innerHTML = `${question[0]}`;
-    question1.setAttribute("question", `${numbers[0]}`);
+    question1.setAttribute("data-question", `${numbers[0]}`);
     question2.innerHTML = `${question[1]}`;
-    question2.setAttribute("question", `${numbers[1]}`);
+    question2.setAttribute("data-question", `${numbers[1]}`);
     question3.innerHTML = `${question[2]}`;
-    question3.setAttribute("question", `${numbers[2]}`);
+    question3.setAttribute("data-question", `${numbers[2]}`);
     question4.innerHTML = `${question[3]}`;
-    question4.setAttribute("question", `${numbers[3]}`);
+    question4.setAttribute("data-question", `${numbers[3]}`);
 }
 
 /**
@@ -252,14 +252,14 @@ function displayQuestion() {
  */
 
 function hideQuestion() {
-    document.getElementById("question-1").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
-    document.getElementById("question-2").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
-    document.getElementById("question-3").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
-    document.getElementById("question-4").innerHTML = '<img src="assets/images/question.png" alt="Image of a question mark">';
+    document.getElementById("question-1").innerHTML = '<img src="assets/images/question.png" alt="Image of multiple question marks">';
+    document.getElementById("question-2").innerHTML = '<img src="assets/images/question.png" alt="Image of multiple question marks">';
+    document.getElementById("question-3").innerHTML = '<img src="assets/images/question.png" alt="Image of multiple question marks">';
+    document.getElementById("question-4").innerHTML = '<img src="assets/images/question.png" alt="Image of multiple question marks">';
 }
 
 /**
- * displayAnswer will listen for each button click with a class of btn and push whatever button-number
+ * displayAnswer will listen for each button click with a class of btn and push whatever data-button-number
  * that button has into a numbers array. If the game-difficulty attribute is detected it clears the number
  * array back to empty. This is also done if the button type is reset, submit or change-difficulty.
  * 
@@ -278,25 +278,25 @@ function displayAnswer() {
     let numbers = [];
     for (let button of buttons) {
         button.addEventListener("click", function () {
-            if (this.getAttribute("button-number") === "1") {
+            if (this.getAttribute("data-button-number") === "1") {
                 numbers.push(1);
-            } else if (this.getAttribute("button-number") === "2") {
+            } else if (this.getAttribute("data-button-number") === "2") {
                 numbers.push(2);
-            } else if (this.getAttribute("button-number") === "3") {
+            } else if (this.getAttribute("data-button-number") === "3") {
                 numbers.push(3);
-            } else if (this.getAttribute("button-number") === "4") {
+            } else if (this.getAttribute("data-button-number") === "4") {
                 numbers.push(4);
-            } else if (this.getAttribute("game-difficulty") === "start-easy") {
+            } else if (this.getAttribute("data-game-difficulty") === "start-easy") {
                 numbers = [];
-            } else if (this.getAttribute("game-difficulty") === "start-medium") {
+            } else if (this.getAttribute("data-game-difficulty") === "start-medium") {
                 numbers = [];
-            } else if (this.getAttribute("game-difficulty") === "start-hard") {
+            } else if (this.getAttribute("data-game-difficulty") === "start-hard") {
                 numbers = [];
-            } else if (this.getAttribute("button-type") === "reset") {
+            } else if (this.getAttribute("data-button-type") === "reset") {
                 numbers = [];
-            } else if (this.getAttribute("button-type") === "submit") {
+            } else if (this.getAttribute("data-button-type") === "submit") {
                 numbers = [];
-            } else if (this.getAttribute("button-type") === "change-difficulty") {
+            } else if (this.getAttribute("data-button-type") === "change-difficulty") {
                 numbers = [];
             }
             let answer = [];
@@ -323,9 +323,9 @@ function displayAnswer() {
             let answer2 = document.getElementById("answer-2");
             let answer3 = document.getElementById("answer-3");
             let answer4 = document.getElementById("answer-4");
-            let type = document.getElementById("start-game").getAttribute("game-difficulty");
+            let type = document.getElementById("start-game").getAttribute("data-game-difficulty");
             if (numbers.length === 1) {
-                answer1.setAttribute("answer", `${numbers[0]}`);
+                answer1.setAttribute("data-answer", `${numbers[0]}`);
                 answer1.innerHTML = `${answer[0]}`;
                 answer1.style.backgroundColor = "rgb(255, 255, 255)";
                 if (type === "start-easy") {
@@ -334,9 +334,9 @@ function displayAnswer() {
                     answer2.style.backgroundColor = "rgb(255, 219, 88)";
                 } else if (type === "start-hard") {
                     answer2.style.backgroundColor = "rgb(221, 53, 34)";
-                }  
+                }
             } else if (numbers.length === 2) {
-                answer2.setAttribute("answer", `${numbers[1]}`);
+                answer2.setAttribute("data-answer", `${numbers[1]}`);
                 answer2.innerHTML = `${answer[1]}`;
                 answer2.style.backgroundColor = "rgb(255, 255, 255)";
                 if (type === "start-easy") {
@@ -347,7 +347,7 @@ function displayAnswer() {
                     answer3.style.backgroundColor = "rgb(221, 53, 34)";
                 }
             } else if (numbers.length === 3) {
-                answer3.setAttribute("answer", `${numbers[2]}`);
+                answer3.setAttribute("data-answer", `${numbers[2]}`);
                 answer3.innerHTML = `${answer[2]}`;
                 answer3.style.backgroundColor = "rgb(255, 255, 255)";
                 if (type === "start-easy") {
@@ -358,7 +358,7 @@ function displayAnswer() {
                     answer4.style.backgroundColor = "rgb(221, 53, 34)";
                 }
             } else if (numbers.length === 4) {
-                answer4.setAttribute("answer", `${numbers[3]}`);
+                answer4.setAttribute("data-answer", `${numbers[3]}`);
                 answer4.innerHTML = `${answer[3]}`;
                 answer4.style.backgroundColor = "rgb(255, 255, 255)";
                 if (type === "start-easy") {
@@ -387,14 +387,14 @@ function displayAnswer() {
  */
 
 function checkAnswer() {
-    let question1 = document.getElementById("question-1").getAttribute("question");
-    let question2 = document.getElementById("question-2").getAttribute("question");
-    let question3 = document.getElementById("question-3").getAttribute("question");
-    let question4 = document.getElementById("question-4").getAttribute("question");
-    let answer1 = document.getElementById("answer-1").getAttribute("answer");
-    let answer2 = document.getElementById("answer-2").getAttribute("answer");
-    let answer3 = document.getElementById("answer-3").getAttribute("answer");
-    let answer4 = document.getElementById("answer-4").getAttribute("answer");
+    let question1 = document.getElementById("question-1").getAttribute("data-question");
+    let question2 = document.getElementById("question-2").getAttribute("data-question");
+    let question3 = document.getElementById("question-3").getAttribute("data-question");
+    let question4 = document.getElementById("question-4").getAttribute("data-question");
+    let answer1 = document.getElementById("answer-1").getAttribute("data-answer");
+    let answer2 = document.getElementById("answer-2").getAttribute("data-answer");
+    let answer3 = document.getElementById("answer-3").getAttribute("data-answer");
+    let answer4 = document.getElementById("answer-4").getAttribute("data-answer");
     let question = [question1, question2, question3, question4];
     let answer = [answer1, answer2, answer3, answer4];
     let compare = question.toString() === answer.toString();
@@ -530,7 +530,7 @@ let nowTime;
  * made visibile are done using the class toggle for the hide class.
  */
 
- function startTimerEasy() {
+function startTimerEasy() {
     let time = 10;
     document.getElementById("seconds").innerHTML = time;
     startButtonFade();
@@ -596,7 +596,7 @@ function startTimerMedium() {
  * made visibile are done using the class toggle for the hide class.
  */
 
- function startTimerHard() {
+function startTimerHard() {
     let time = 3;
     document.getElementById("seconds").innerHTML = time;
     startButtonFade();
@@ -625,24 +625,24 @@ function startTimerMedium() {
  * answer images in the answer boxes and toggles the start, reset, message box and selection elements.
  */
 
- function resetGame() {
+function resetGame() {
     let answer1 = document.getElementById("answer-1");
     let answer2 = document.getElementById("answer-2");
     let answer3 = document.getElementById("answer-3");
     let answer4 = document.getElementById("answer-4");
     clearTimeout(nowTime);
     answer1.innerHTML = "";
-    answer1.setAttribute("answer", "");
+    answer1.setAttribute("data-answer", "");
     answer2.innerHTML = "";
-    answer2.setAttribute("answer", "");
+    answer2.setAttribute("data-answer", "");
     answer2.style.backgroundColor = "rgb(255, 255, 255)";
     answer3.innerHTML = "";
-    answer3.setAttribute("answer", "");
+    answer3.setAttribute("data-answer", "");
     answer3.style.backgroundColor = "rgb(255, 255, 255)";
     answer4.innerHTML = "";
-    answer4.setAttribute("answer", "");
+    answer4.setAttribute("data-answer", "");
     answer4.style.backgroundColor = "rgb(255, 255, 255)";
-    let type = document.getElementById("start-game").getAttribute("game-difficulty");
+    let type = document.getElementById("start-game").getAttribute("data-game-difficulty");
     if (type === "start-easy") {
         document.getElementById("seconds").innerHTML = 10;
         answer1.style.backgroundColor = "rgb(182, 201, 75)";
@@ -661,7 +661,7 @@ function startTimerMedium() {
         document.getElementById("outer-start-game").classList.add("hard-animation");
         document.getElementById("outer-reset-game").classList.remove("hard-animation");
         document.getElementById("outer-submit").classList.remove("hard-animation");
-    } 
+    }
     document.getElementById("outer-start-game").classList.add("btn-circle");
     document.getElementById("outer-start-game").classList.remove("btn-circle-fade");
     document.getElementById("start-game").classList.remove("btn-disable")
