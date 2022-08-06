@@ -443,7 +443,8 @@ header button {
 
 #outer-score hr {
     align-self: center;
-    border: 2.5px solid black;
+    border: none;
+    height: 5px;
     background-color: black;
     width: 80%;
     margin: 0;
