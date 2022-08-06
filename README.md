@@ -230,6 +230,17 @@ Appears if entering an incorrect URL for Burger Bonanza for example: https://ale
 
 ### Cross Browser and Cross Device Testing
 
+| Device                              | Browser        | OS                    | Viewpoint   |
+|-------------------------------------|----------------|-----------------------|-------------|
+| Real laptop: Dynabook Satellite Pro | Microsoft Edge | Windows 11            | 1536 x 864  |
+| Real phone: One Plus 7 Pro          | Google Chrome  | Android v11 Oxygen OS | 385 x 833   |
+| Real laptop: HP 250 G7              | Google Chrome  | Windows 10            | 1306 x 864  |
+| Emulation: iPhone SE                | Microsoft Edge | Windows 11            | 375 x 667   |
+| Emulation: iPad Air                 | Microsoft Edge | Windows 11            | 1180 x 820  |
+| Real desktop: Custom build          | Firefox        | Windows 10            | 2560 x 1440 |
+| Real laptop: Microsoft Surface      | Google Chrome  | Windows 11            | 1280 x 720  |
+| Emulation: iPad Mini                | Microsoft Edge | Windows 11            | 768 x 1024  |
+| Real tablet: iPad (9th Gen)         | Safari         | IOS 15.5              | 1024 x 1366 |
 
 ### Manual Testing
 
