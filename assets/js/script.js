@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 toggleHeader();
                 easyStyle();
                 toggleGame();
+                document.getElementById("outer-title").scrollIntoView();
             } else if (this.getAttribute("game-difficulty") === "medium") {
                 document.getElementById("seconds").innerHTML = 6;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-medium");
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 toggleHeader();
                 mediumStyle();
                 toggleGame();
+                document.getElementById("outer-title").scrollIntoView();
             } else if (this.getAttribute("game-difficulty") === "hard") {
                 document.getElementById("seconds").innerHTML = 3;
                 document.getElementById("start-game").setAttribute("game-difficulty", "start-hard");
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 toggleHeader();
                 hardStyle();
                 toggleGame();
+                document.getElementById("outer-title").scrollIntoView();
             } else if (this.getAttribute("game-difficulty") === "start-easy") {
                 resetGame();
                 displayQuestion();
@@ -544,6 +547,7 @@ let nowTime;
             submitButtonFade();
             document.getElementById("outer-submit").classList.toggle("easy-animation");
             hideQuestion();
+            document.getElementById("selection-title").scrollIntoView();
         }
     }
     nowTime = setTimeout(timer, 1000);
@@ -576,6 +580,7 @@ function startTimerMedium() {
             submitButtonFade();
             document.getElementById("outer-submit").classList.toggle("medium-animation");
             hideQuestion();
+            document.getElementById("selection-title").scrollIntoView();
         }
     }
     nowTime = setTimeout(timer, 1000);
@@ -608,6 +613,7 @@ function startTimerMedium() {
             submitButtonFade();
             document.getElementById("outer-submit").classList.toggle("hard-animation");
             hideQuestion();
+            document.getElementById("selection-title").scrollIntoView();
         }
     }
     nowTime = setTimeout(timer, 1000);

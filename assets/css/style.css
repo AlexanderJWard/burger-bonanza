@@ -468,7 +468,7 @@ header button {
     padding: 0.5rem;
     margin: auto;
     font-family: "Fredoka One", sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     color: black;
 }
 
@@ -700,6 +700,10 @@ header button {
     .selection-box {
         height: 6rem;
         width: 8rem;
+    }
+
+    #selection-title h2 {
+        font-size: 20px;
     }
 }
 
