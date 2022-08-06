@@ -87,10 +87,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 resetButtonFade();
                 submitButtonFade();
             }
-        })
+        });
     }
     displayAnswer();
-})
+});
 
 /**
 * Music file setup
@@ -370,7 +370,7 @@ function displayAnswer() {
                 }
                 numbers = [];
             }
-        })
+        });
     }
 }
 
@@ -404,7 +404,7 @@ function checkAnswer() {
     } else {
         document.getElementById("message-box").innerHTML = `<p>WRONG!</p><p>Better luck next time.</p><p>Press START to play again!</p>`;
         incrementWrong();
-    };
+    }
     let numbers = [];
     for (let number of question) {
         if (number === "1") {
@@ -486,9 +486,9 @@ function messageBoxStart() {
 function startButtonFade() {
     document.getElementById("outer-start-game").classList.toggle("btn-circle");
     document.getElementById("outer-start-game").classList.toggle("btn-circle-fade");
-    document.getElementById("start-game").classList.toggle("btn-disable")
+    document.getElementById("start-game").classList.toggle("btn-disable");
     document.getElementById("start-game").classList.toggle("btn-enable");
-    document.getElementById("start-game").classList.toggle("btn-text")
+    document.getElementById("start-game").classList.toggle("btn-text");
     document.getElementById("start-game").classList.toggle("btn-text-fade");
 }
 
@@ -499,9 +499,9 @@ function startButtonFade() {
 function resetButtonFade() {
     document.getElementById("outer-reset-game").classList.toggle("btn-circle");
     document.getElementById("outer-reset-game").classList.toggle("btn-circle-fade");
-    document.getElementById("reset-game").classList.toggle("btn-disable")
+    document.getElementById("reset-game").classList.toggle("btn-disable");
     document.getElementById("reset-game").classList.toggle("btn-enable");
-    document.getElementById("reset-game").classList.toggle("btn-text")
+    document.getElementById("reset-game").classList.toggle("btn-text");
     document.getElementById("reset-game").classList.toggle("btn-text-fade");
 }
 
@@ -512,9 +512,9 @@ function resetButtonFade() {
 function submitButtonFade() {
     document.getElementById("outer-submit").classList.toggle("btn-circle");
     document.getElementById("outer-submit").classList.toggle("btn-circle-fade");
-    document.getElementById("submit").classList.toggle("btn-disable")
+    document.getElementById("submit").classList.toggle("btn-disable");
     document.getElementById("submit").classList.toggle("btn-enable");
-    document.getElementById("submit").classList.toggle("btn-text")
+    document.getElementById("submit").classList.toggle("btn-text");
     document.getElementById("submit").classList.toggle("btn-text-fade");
 }
 
@@ -664,23 +664,23 @@ function resetGame() {
     }
     document.getElementById("outer-start-game").classList.add("btn-circle");
     document.getElementById("outer-start-game").classList.remove("btn-circle-fade");
-    document.getElementById("start-game").classList.remove("btn-disable")
+    document.getElementById("start-game").classList.remove("btn-disable");
     document.getElementById("start-game").classList.add("btn-enable");
-    document.getElementById("start-game").classList.add("btn-text")
+    document.getElementById("start-game").classList.add("btn-text");
     document.getElementById("start-game").classList.remove("btn-text-fade");
 
     document.getElementById("outer-reset-game").classList.remove("btn-circle");
     document.getElementById("outer-reset-game").classList.add("btn-circle-fade");
-    document.getElementById("reset-game").classList.add("btn-disable")
+    document.getElementById("reset-game").classList.add("btn-disable");
     document.getElementById("reset-game").classList.remove("btn-enable");
-    document.getElementById("reset-game").classList.remove("btn-text")
+    document.getElementById("reset-game").classList.remove("btn-text");
     document.getElementById("reset-game").classList.add("btn-text-fade");
 
     document.getElementById("outer-submit").classList.remove("btn-circle");
     document.getElementById("outer-submit").classList.add("btn-circle-fade");
-    document.getElementById("submit").classList.add("btn-disable")
+    document.getElementById("submit").classList.add("btn-disable");
     document.getElementById("submit").classList.remove("btn-enable");
-    document.getElementById("submit").classList.remove("btn-text")
+    document.getElementById("submit").classList.remove("btn-text");
     document.getElementById("submit").classList.add("btn-text-fade");
 
     messageBoxStart();
