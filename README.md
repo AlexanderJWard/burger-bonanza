@@ -183,6 +183,13 @@ Appears if entering an incorrect URL for Burger Bonanza for example: https://ale
 
 ### Validation Testing
 
+- __HTML__
+
+![image](https://user-images.githubusercontent.com/102811792/183261017-880db659-fad5-4026-982c-9249a2a15b22.png)
+
+- __CSS__
+
+![image](https://user-images.githubusercontent.com/102811792/183261598-cb97d7e3-54f9-40ce-a791-3720cd2a0680.png)
 
 ### Cross Browser and Cross Device Testing
 
