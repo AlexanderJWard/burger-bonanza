@@ -64,6 +64,16 @@ I've chosen colors that fit the food and burger theme to tie together the diffic
 
 ![image](https://user-images.githubusercontent.com/102811792/181935504-cff5e34c-4218-4759-8aa6-3dfde5323d13.png)
 
+The colors have been checked on https://webaim.org/resources/contrastchecker/ to ensure they don't contrast for players with visual accessibility needs.
+
+![image](https://user-images.githubusercontent.com/102811792/183780106-86c900a6-31af-4098-98b8-dd297e3d56b0.png)
+
+![image](https://user-images.githubusercontent.com/102811792/183780165-ccbe1695-ef24-48c7-bcdd-e66dbd2ccbe3.png)
+
+![image](https://user-images.githubusercontent.com/102811792/183780215-de32f2dc-c0c9-476c-90a9-d056f0bb77b5.png)
+
+- __#DD3522 fails the contrast check for normal text however all the foreground text in the game on top of this color is large text which has passed the contrast check.__
+
 #### Typography
 
 The font I've used through-out Burger Bonanza has been __Fredoka One__ due to it's very thick and curvy approach which contains no sharp points, I think it fits the theme for a burger restaraunt style game very well and is readable for all age groups but esspecially for children so for me the main attraction was that the font needs to look fun from first viewing it.
